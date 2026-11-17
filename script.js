@@ -1,7 +1,6 @@
 /* =========================================================
    Portfolio — Aristide Cédric Bassolé
-   Interactions légères (menu mobile, révélations, compteurs,
-   formulaire de contact, année, surlignage de navigation)
+   Menu mobile, révélation au scroll, formulaire, navigation active
    ========================================================= */
 
 /* ---------- Adresse e-mail de contact : À REMPLACER ---------- */
@@ -38,47 +37,14 @@ if ('IntersectionObserver' in window) {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
   revealEls.forEach((el) => revealObserver.observe(el));
 } else {
   revealEls.forEach((el) => el.classList.add('visible'));
 }
 
-/* ---------------------- Compteurs ---------------------- */
-const statNums = document.querySelectorAll('.stat-num');
-
-function animateCounter(el) {
-  const target = Number(el.dataset.target) || 0;
-  const duration = 1400;
-  const start = performance.now();
-
-  function frame(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = String(Math.round(target * eased));
-    if (progress < 1) requestAnimationFrame(frame);
-    else el.textContent = String(target);
-  }
-  requestAnimationFrame(frame);
-}
-
-if ('IntersectionObserver' in window && statNums.length) {
-  const counterObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNums.forEach((el) => counterObserver.observe(el));
-} else {
-  statNums.forEach((el) => { el.textContent = el.dataset.target; });
-}
-
-/* ---------------------- Année dans le pied de page ---------------------- */
+/* ---------------------- Année ---------------------- */
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -117,7 +83,7 @@ const navLinks = document.querySelectorAll('.nav a[href^="#"]');
 
 if (sections.length && navLinks.length) {
   const activateNav = () => {
-    const position = window.scrollY + 120;
+    const position = window.scrollY + 130;
     let currentId = '';
 
     sections.forEach((section) => {
