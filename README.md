@@ -1,7 +1,7 @@
 # Portfolio — Aristide Cédric Bassolé
 
 Site statique (HTML / CSS / JavaScript pur), design **Noir & Vermillon**,
-motion design équilibré. Aucun framework.
+motion design équilibré. Aucun framework, aucune dépendance d'images externe.
 
 **En ligne :** https://aristidecedricbassole-cyber.github.io/
 **Raccourci :** https://bit.ly/AristideCedricBassole
@@ -10,35 +10,30 @@ motion design équilibré. Aucun framework.
 ## Positionnement
 
 Photographe, vidéaste **indépendant** et facilitateur de jeunes, basé à
-**Ouagadougou (Burkina Faso)**. Ton direct et assuré.
+**Ouagadougou (Burkina Faso)**. Ton direct et assuré. La rubrique
+« Communication & marketing digital » a volontairement été retirée.
 
-> Note : la rubrique « Communication & marketing digital » et la certification
-> associée ont volontairement été retirées du contenu.
+## Corrections issues de l'analyse SWOT
 
-## Menu
-
-Overlay plein écran, 6 liens numérotés avec aperçu photo au survol :
-Travaux · Expertise · Facilitation · À propos · Témoignages · Contact.
+- Statistiques honnêtes (plus de « 100+ pays via AIESEC »)
+- Images rapatriées dans `assets/` : aucune dépendance à Unsplash
+- SEO : Open Graph, Twitter Card, canonical, favicon SVG, données structurées `Person`
+- Accessibilité : lien d'évitement, focus visible, piège de focus dans l'overlay, retour du focus
+- Conversion : formulaire de contact (ouvre la messagerie)
+- Contenu : section « Méthode » en 3 temps
+- Fiabilité : sécurité anti-contenu masqué après 5 s
 
 ## Sections
 
-1. Travaux — galerie filtrable (Vidéo / Photo / Facilitation)
-2. Expertise — 4 piliers en accordéon
-3. Facilitation — AIESEC, leadership et ateliers jeunes
-4. À propos — parcours et timeline
-5. Témoignages — carrousel avec **3 emplacements « À compléter »**
-6. Contact — e-mail, WhatsApp et réseaux
+Travaux (filtres) · Expertise (accordéon + méthode) · Facilitation · À propos ·
+Témoignages (3 emplacements « À compléter ») · Contact (e-mail + formulaire).
 
-## Motion design
+## À remplacer par vos éléments réels
 
-Loader 00→100, overlay animé, texte mot par mot, révélations par masque,
-parallaxe, filtres, accordéon, carrousel, curseur, compteurs et boutons
-magnétiques. Désactivé avec `prefers-reduced-motion`. Défilement naturel.
-
-## À remplacer
-
-- Les images `images.unsplash.com/...` sont des visuels de démonstration.
+- Les 6 images de `assets/` restent des **visuels de démonstration**.
 - Les 3 cartes de témoignages sont des emplacements à compléter.
+- Ajoutez vos vraies photos, projets et retours clients pour lever les dernières
+  faiblesses identifiées (absence de preuves réelles).
 
 ## Mise à jour
 

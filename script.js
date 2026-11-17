@@ -6,6 +6,7 @@
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+const CONTACT_EMAIL = 'aristidecedricbassole@gmail.com';
 
 /* ====================== LOADER ====================== */
 const loader = document.getElementById('loader');
@@ -83,15 +84,20 @@ const overlayLinks = document.querySelectorAll('.overlay-list a');
 const previewImgs = document.querySelectorAll('.op-img');
 const opCaption = document.getElementById('opCaption');
 
+let lastFocused = null;
+
 function openMenu() {
+  lastFocused = document.activeElement;
   document.body.classList.add('menu-open');
   if (burger) { burger.setAttribute('aria-expanded', 'true'); burger.setAttribute('aria-label', 'Fermer le menu'); }
   if (overlay) overlay.setAttribute('aria-hidden', 'false');
+  setTimeout(() => overlayLinks[0]?.focus(), 500);
 }
 function closeMenu() {
   document.body.classList.remove('menu-open');
   if (burger) { burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Ouvrir le menu'); }
   if (overlay) overlay.setAttribute('aria-hidden', 'true');
+  if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
 }
 
 if (burger) burger.addEventListener('click', () => {
@@ -100,7 +106,17 @@ if (burger) burger.addEventListener('click', () => {
 if (overlayClose) overlayClose.addEventListener('click', closeMenu);
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && document.body.classList.contains('menu-open')) closeMenu();
+  if (!document.body.classList.contains('menu-open')) return;
+  if (e.key === 'Escape') { closeMenu(); return; }
+  if (e.key !== 'Tab') return;
+
+  const focusables = Array.from(overlay.querySelectorAll('a[href], button:not([disabled])'));
+  if (!focusables.length) return;
+  const first = focusables[0];
+  const last = focusables[focusables.length - 1];
+
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
 });
 
 overlayLinks.forEach((link) => {
@@ -277,6 +293,21 @@ if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
       el.style.transform = `translate3d(${(e.clientX - rect.left - rect.width / 2) * 0.12}px, ${(e.clientY - rect.top - rect.height / 2) * 0.16}px, 0)`;
     });
     el.addEventListener('pointerleave', () => { el.style.transform = ''; });
+  });
+}
+
+/* ====================== FORMULAIRE DE CONTACT ====================== */
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const name = document.getElementById('cf-name')?.value.trim() || '';
+    const email = document.getElementById('cf-email')?.value.trim() || '';
+    const subject = document.getElementById('cf-subject')?.value || 'Demande';
+    const message = document.getElementById('cf-message')?.value.trim() || '';
+    const body = [`Nom : ${name}`, `E-mail : ${email}`, `Objet : ${subject}`, '', message].join('\n');
+    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Portfolio] ' + subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
   });
 }
 

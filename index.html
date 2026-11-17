@@ -5,7 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Aristide Cédric Bassolé — photographe, vidéaste indépendant et facilitateur de jeunes à Ouagadougou. Images, films et récits qui restent.">
   <meta name="theme-color" content="#0b0a09">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Aristide Cédric Bassolé">
   <title>Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur</title>
+
+  <!-- Open Graph / partage social -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur">
+  <meta property="og:description" content="Images, films et récits qui restent. Photographe et vidéaste indépendant à Ouagadougou.">
+  <meta property="og:image" content="https://aristidecedricbassole-cyber.github.io/assets/hero.jpg">
+  <meta property="og:url" content="https://aristidecedricbassole-cyber.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aristidecedricbassole-cyber.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a09'/%3E%3Ctext x='10' y='44' font-family='Georgia' font-size='36' fill='%23f2ede4'%3EAC%3C/text%3E%3Ccircle cx='55' cy='45' r='4' fill='%23ff4a17'/%3E%3C/svg%3E">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Aristide Cédric Bassolé",
+    "jobTitle": "Photographe, vidéaste et facilitateur de jeunes",
+    "email": "mailto:aristidecedricbassole@gmail.com",
+    "url": "https://aristidecedricbassole-cyber.github.io/",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ouagadougou", "addressCountry": "BF" },
+    "sameAs": [
+      "https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265",
+      "https://www.instagram.com/aristide_cedric_/",
+      "https://www.facebook.com/aristidecedric.bassole.7/"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +43,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="is-loading">
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
   <!-- ============ LOADER ============ -->
   <div class="loader" id="loader" aria-hidden="true">
@@ -70,12 +101,12 @@
         </ul>
 
         <div class="overlay-preview" id="overlayPreview" aria-hidden="true">
-          <img class="op-img is-active" data-key="video" src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=900&q=80" alt="Aperçu travaux">
-          <img class="op-img" data-key="expertise" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=900&q=80" alt="Aperçu expertise">
-          <img class="op-img" data-key="facilitation" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=900&q=80" alt="Aperçu facilitation">
-          <img class="op-img" data-key="about" src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=900&q=80" alt="Aperçu à propos">
-          <img class="op-img" data-key="quotes" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=900&q=80" alt="Aperçu témoignages">
-          <img class="op-img" data-key="contact" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&q=80" alt="Aperçu contact">
+          <img class="op-img is-active" data-key="video" src="assets/video.jpg" alt="Aperçu travaux">
+          <img class="op-img" data-key="expertise" src="assets/gear.jpg" alt="Aperçu expertise">
+          <img class="op-img" data-key="facilitation" src="assets/workshop.jpg" alt="Aperçu facilitation">
+          <img class="op-img" data-key="about" src="assets/hero.jpg" alt="Aperçu à propos">
+          <img class="op-img" data-key="quotes" src="assets/reportage.jpg" alt="Aperçu témoignages">
+          <img class="op-img" data-key="contact" src="assets/landscape.jpg" alt="Aperçu contact">
           <span class="op-caption" id="opCaption">TRAVAUX</span>
         </div>
       </div>
@@ -91,12 +122,12 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main">
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="accueil" data-label="01 — ACCUEIL">
       <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=82" alt="Photographe au travail en lumière dorée — visuel de démonstration">
+        <img src="assets/hero.jpg" alt="Photographe au travail en lumière dorée — visuel de démonstration">
       </div>
       <div class="hero-veil"></div>
 
@@ -112,9 +143,9 @@
 
       <div class="container hero-foot">
         <div class="hero-stats">
-          <div><strong data-count="100" data-suffix="+">100+</strong><span>pays via AIESEC</span></div>
           <div><strong data-count="4" data-pad="2">04</strong><span>expertises réunies</span></div>
           <div><strong>2023</strong><span>avec AIESEC</span></div>
+          <div><strong>2024</strong><span>début en studio vidéo</span></div>
         </div>
         <a href="#realisations" class="scroll-cue" aria-label="Descendre"><span>SCROLL</span><i></i></a>
       </div>
@@ -146,19 +177,19 @@
 
         <div class="gallery" id="gallery">
           <figure class="work-card card-large" data-cat="video">
-            <div class="card-media"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80" alt="Couverture d'événement — visuel de démonstration" loading="lazy"></div>
+            <div class="card-media"><img src="assets/video.jpg" alt="Couverture d'événement — visuel de démonstration" loading="lazy"></div>
             <figcaption><span class="card-num">01</span><div><span class="card-cat">Vidéo · Événement</span><h3>Films &amp; couvertures</h3></div><span class="card-arrow">↗</span></figcaption>
           </figure>
           <figure class="work-card" data-cat="photo">
-            <div class="card-media"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Reportage événementiel — visuel de démonstration" loading="lazy"></div>
+            <div class="card-media"><img src="assets/reportage.jpg" alt="Reportage événementiel — visuel de démonstration" loading="lazy"></div>
             <figcaption><span class="card-num">02</span><div><span class="card-cat">Photographie</span><h3>Reportages</h3></div><span class="card-arrow">↗</span></figcaption>
           </figure>
           <figure class="work-card" data-cat="photo">
-            <div class="card-media"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=80" alt="Savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
+            <div class="card-media"><img src="assets/gear.jpg" alt="Savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
             <figcaption><span class="card-num">03</span><div><span class="card-cat">Identité visuelle</span><h3>Images de marque</h3></div><span class="card-arrow">↗</span></figcaption>
           </figure>
           <figure class="work-card card-large" data-cat="facilitation">
-            <div class="card-media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier de formation — visuel de démonstration" loading="lazy"></div>
+            <div class="card-media"><img src="assets/workshop.jpg" alt="Atelier de formation — visuel de démonstration" loading="lazy"></div>
             <figcaption><span class="card-num">04</span><div><span class="card-cat">Facilitation · AIESEC</span><h3>Former &amp; transmettre</h3></div><span class="card-arrow">↗</span></figcaption>
           </figure>
         </div>
@@ -190,12 +221,21 @@
             <div class="acc-panel"><div class="acc-inner"><p>Animer des sessions de soft skills, fédérer des équipes multiculturelles et transmettre des compétences concrètes. Une pratique développée chez AIESEC in Burkina Faso.</p><div class="acc-tags"><span>Leadership</span><span>Soft skills</span><span>AIESEC</span></div></div></div>
           </div>
         </div>
+
+        <div class="method reveal">
+          <div class="method-head"><span class="section-index">MÉTHODE</span><h3>Trois temps, une image juste.</h3></div>
+          <div class="method-steps">
+            <div><span>01</span><strong>Cadrer</strong><p>Comprendre votre objectif, votre audience et le contexte avant de sortir l'appareil.</p></div>
+            <div><span>02</span><strong>Créer</strong><p>Tournage ou prise de vue, direction et captures, avec un œil sur l'usage final.</p></div>
+            <div><span>03</span><strong>Livrer</strong><p>Montage, étalonnage et formats adaptés à chaque canal : un travail prêt à servir.</p></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ============ FACILITATION ============ -->
     <section class="facilitation" id="facilitation" data-label="04 — FACILITATION">
-      <div class="fac-media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier avec un groupe — visuel de démonstration" loading="lazy"></div>
+      <div class="fac-media"><img src="assets/workshop.jpg" alt="Atelier avec un groupe — visuel de démonstration" loading="lazy"></div>
       <div class="fac-content">
         <div class="section-index">03 / FACILITATION</div>
         <h2 data-split>Former la relève, <em>une image à la fois.</em></h2>
@@ -267,18 +307,37 @@
     <section class="contact" id="contact" data-label="07 — CONTACT">
       <div class="contact-glow" aria-hidden="true"></div>
       <div class="container contact-inner">
-        <div class="section-index">06 / CONTACT</div>
-        <h2 data-split>Parlons de <em>votre projet.</em></h2>
-        <p class="contact-lead">Un film, un reportage ou un atelier pour vos jeunes ? Dites-moi ce que vous avez en tête — je m'en occupe.</p>
-        <a class="email-link magnetic" href="mailto:aristidecedricbassole@gmail.com"><span>aristidecedricbassole@gmail.com</span><i>↗</i></a>
-        <div class="contact-bottom">
-          <div class="contact-socials">
-            <a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a>
-            <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a>
-            <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a>
-            <a href="https://www.facebook.com/aristidecedric.bassole.7/" target="_blank" rel="noopener">Facebook ↗</a>
+        <div class="contact-grid">
+          <div class="contact-copy">
+            <div class="section-index">06 / CONTACT</div>
+            <h2 data-split>Parlons de <em>votre projet.</em></h2>
+            <p class="contact-lead">Un film, un reportage ou un atelier pour vos jeunes ? Dites-moi ce que vous avez en tête — je m'en occupe.</p>
+            <a class="email-link magnetic" href="mailto:aristidecedricbassole@gmail.com"><span>aristidecedricbassole@gmail.com</span><i>↗</i></a>
+            <div class="contact-bottom">
+              <div class="contact-socials">
+                <a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a>
+                <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="https://www.facebook.com/aristidecedric.bassole.7/" target="_blank" rel="noopener">Facebook ↗</a>
+              </div>
+              <p class="contact-place">Ouagadougou, Burkina Faso<br>Disponible pour projets internationaux</p>
+            </div>
           </div>
-          <p class="contact-place">Ouagadougou, Burkina Faso<br>Disponible pour projets internationaux</p>
+
+          <form class="contact-form reveal" id="contactForm">
+            <h3>Écrivez-moi</h3>
+            <div class="field"><label for="cf-name">Votre nom</label><input type="text" id="cf-name" name="name" required placeholder="Votre nom"></div>
+            <div class="field"><label for="cf-email">Votre e-mail</label><input type="email" id="cf-email" name="email" required placeholder="vous@exemple.com"></div>
+            <div class="field">
+              <label for="cf-subject">Objet</label>
+              <select id="cf-subject" name="subject">
+                <option>Production vidéo</option><option>Reportage photo</option><option>Identité visuelle</option><option>Atelier / facilitation</option><option>Autre demande</option>
+              </select>
+            </div>
+            <div class="field"><label for="cf-message">Votre message</label><textarea id="cf-message" name="message" rows="4" required placeholder="Parlez-moi de votre projet…"></textarea></div>
+            <button type="submit" class="btn btn-primary magnetic"><span>Envoyer le message</span><i>↗</i></button>
+            <p class="form-note">S'ouvre dans votre messagerie, prêt à être envoyé.</p>
+          </form>
         </div>
       </div>
     </section>
