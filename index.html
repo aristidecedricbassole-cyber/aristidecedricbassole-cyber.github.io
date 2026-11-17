@@ -3,313 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aristide Cédric Bassolé — photographe, vidéaste au Studio TOPCART226 et facilitateur de jeunes. Des images qui parlent, des messages qui restent.">
-  <meta name="theme-color" content="#0f0e0d">
-  <title>Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur</title>
+  <meta name="description" content="Aristide Cédric Bassolé — photographe, vidéaste indépendant et facilitateur de jeunes. Communication visuelle, marketing digital et storytelling au Burkina Faso.">
+  <meta name="theme-color" content="#0b0a09">
+  <title>Aristide Cédric Bassolé — Photographe · Vidéaste · Communicant</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Barre de progression de lecture -->
-  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-top">
+      <span class="loader-brand">AC<span>.</span></span>
+      <span class="loader-tag">Portfolio — 2026</span>
+    </div>
+    <div class="loader-center"><span id="loaderNum">00</span><i>%</i></div>
+    <div class="loader-bar"><span id="loaderBar"></span></div>
+  </div>
 
-  <!-- ====================== EN-TÊTE ====================== -->
-  <header class="site-header" id="top">
-    <div class="container nav-wrap">
-      <a href="#top" class="brand" aria-label="Retour en haut">
-        <span class="brand-mark">AC<span class="brand-dot">.</span></span>
-        <span class="brand-name">Aristide Cédric Bassolé</span>
+  <!-- ============ CURSEUR ============ -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ============ PROGRESSION ============ -->
+  <div class="progress" id="progress" aria-hidden="true">
+    <span class="progress-line"><i id="progressFill"></i></span>
+    <span class="progress-label" id="progressLabel">01 — ACCUEIL</span>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo link-hover" aria-label="Retour en haut">
+        <span class="logo-mark">AC<span>.</span></span>
+        <span class="logo-name">Aristide Cédric Bassolé</span>
       </a>
-
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
       </button>
-
-      <nav class="nav" id="nav" aria-label="Navigation principale">
-        <a href="#realisations">Travaux</a>
-        <a href="#apropos">Approche</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#parcours">Parcours</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn-sm">Parlons-en</a>
+      <nav class="menu" id="menu" aria-label="Navigation principale">
+        <a href="#realisations" class="link-hover">Travaux</a>
+        <a href="#approche" class="link-hover">Approche</a>
+        <a href="#expertise" class="link-hover">Expertise</a>
+        <a href="#parcours" class="link-hover">Parcours</a>
+        <a href="#contact" class="menu-cta">Contact <span>↗</span></a>
       </nav>
     </div>
   </header>
 
   <main>
 
-    <!-- ====================== HÉRO PLEIN ÉCRAN ====================== -->
-    <section class="hero" id="accueil">
-      <div class="hero-media">
-        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=82" alt="Photographe au travail au lever du soleil — visuel de démonstration">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="accueil" data-label="01 — ACCUEIL">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=82" alt="Photographe au travail en lumière dorée — visuel de démonstration">
       </div>
-      <div class="hero-shade"></div>
+      <div class="hero-veil"></div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
 
-      <div class="container hero-inner">
-        <div class="hero-content">
-          <span class="eyebrow"><span class="pulse"></span> Photographe · Vidéaste · Facilitateur de jeunes</span>
-          <h1>Votre message mérite <em>d'être vu.</em> Et retenu.</h1>
-          <p class="hero-lead">
-            Je transforme vos idées en images qui parlent et en messages qui restent.
-            Studio TOPCART226, communication digitale et transmission aux jeunes —
-            basé à Koudougou / Ouagadougou, au Burkina Faso.
-          </p>
-          <div class="hero-actions">
-            <a href="#realisations" class="btn">Voir les travaux</a>
-            <a href="#contact" class="btn btn-outline">Démarrer un projet</a>
-          </div>
-        </div>
+      <div class="hero-rail" aria-hidden="true">
+        <span>PORTFOLIO</span><i></i><span>2026</span>
+      </div>
 
-        <div class="hero-bottom">
-          <div class="hero-credentials">
-            <div><strong>2024</strong><span>chez TOPCART226</span></div>
-            <div><strong data-count="100" data-suffix="+">100+</strong><span>pays avec AIESEC</span></div>
-            <div><strong data-count="3" data-pad="2">03</strong><span>expertises réunies</span></div>
-          </div>
-          <a href="#realisations" class="scroll-cue" aria-label="Descendre vers les travaux">
-            <span>Défiler</span><span class="scroll-line"></span>
-          </a>
+      <div class="container hero-content">
+        <div class="hero-kicker"><span class="dot"></span> Photographe · Vidéaste · Facilitateur de jeunes</div>
+        <h1 class="hero-title" data-split>Je crée des images<br>qui font <em>parler</em><br>de vous.</h1>
+        <p class="hero-lead">Communication visuelle, marketing digital et récits qui restent. Indépendant, basé au Burkina Faso, ouvert aux projets partout ailleurs.</p>
+        <div class="hero-actions">
+          <a href="#realisations" class="btn btn-primary"><span>Voir les travaux</span><i>↘</i></a>
+          <a href="#contact" class="btn btn-ghost"><span>Démarrer un projet</span><i>↗</i></a>
         </div>
       </div>
+
+      <div class="container hero-foot">
+        <div class="hero-stats">
+          <div><strong data-count="100" data-suffix="+">100+</strong><span>pays via AIESEC</span></div>
+          <div><strong data-count="3" data-pad="2">03</strong><span>expertises réunies</span></div>
+          <div><strong>OIF</strong><span>certifié marketing digital</span></div>
+        </div>
+        <a href="#realisations" class="scroll-cue" aria-label="Descendre">
+          <span>SCROLL</span><i></i>
+        </a>
+      </div>
+
+      <div class="hero-corner" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
     </section>
 
-    <!-- ====================== BANDEAU ====================== -->
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-track">
-        <span>PHOTOGRAPHIE</span><i>✦</i><span>VIDÉOGRAPHIE</span><i>✦</i>
-        <span>STORYTELLING DE MARQUE</span><i>✦</i><span>MARKETING DIGITAL</span><i>✦</i>
-        <span>FACILITATION DE JEUNES</span><i>✦</i>
-        <span>PHOTOGRAPHIE</span><i>✦</i><span>VIDÉOGRAPHIE</span><i>✦</i>
-        <span>STORYTELLING DE MARQUE</span><i>✦</i><span>MARKETING DIGITAL</span><i>✦</i>
-        <span>FACILITATION DE JEUNES</span><i>✦</i>
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PHOTOGRAPHIE</span><b>✳</b><span>VIDÉOGRAPHIE</span><b>✳</b><span>COMMUNICATION</span><b>✳</b><span>MARKETING DIGITAL</span><b>✳</b><span>FACILITATION</span><b>✳</b>
+        <span>PHOTOGRAPHIE</span><b>✳</b><span>VIDÉOGRAPHIE</span><b>✳</b><span>COMMUNICATION</span><b>✳</b><span>MARKETING DIGITAL</span><b>✳</b><span>FACILITATION</span><b>✳</b>
       </div>
     </div>
 
-    <!-- ====================== TRAVAUX / GALERIE ====================== -->
-    <section class="section work" id="realisations">
+    <!-- ============ TRAVAUX ============ -->
+    <section class="section work" id="realisations" data-label="02 — TRAVAUX">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow-plain">01 — Travaux sélectionnés</span>
-          <h2 data-split>Des images qui <em>font le travail.</em></h2>
-          <p class="section-sub">Production vidéo, reportage photo, contenus de marque et facilitation. <span class="demo-note">Visuels de démonstration — à remplacer par vos propres images.</span></p>
+        <div class="section-head">
+          <div class="section-index">01 / SÉLECTION</div>
+          <h2 data-split>Des images qui <em>travaillent</em><br>pour vous.</h2>
+          <p>Production vidéo, reportage photo, identité visuelle et facilitation. <span class="demo">Visuels de démonstration — à remplacer par vos créations.</span></p>
         </div>
 
-        <div class="gallery">
-          <figure class="tile tile-wide reveal">
-            <div class="tile-media"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80" alt="Couverture d'événement et lumières de scène — visuel de démonstration" loading="lazy"></div>
+        <div class="filters" role="group" aria-label="Filtrer les travaux">
+          <button class="filter is-active" data-filter="all">Tout <sup>04</sup></button>
+          <button class="filter" data-filter="video">Vidéo <sup>01</sup></button>
+          <button class="filter" data-filter="photo">Photo <sup>02</sup></button>
+          <button class="filter" data-filter="facilitation">Facilitation <sup>01</sup></button>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <figure class="work-card card-large" data-cat="video">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80" alt="Couverture d'événement — visuel de démonstration" loading="lazy"></div>
             <figcaption>
-              <span class="tile-cat">Vidéo · Studio TOPCART226</span>
-              <h3>Films &amp; productions</h3>
-              <span class="tile-year">2024 — aujourd'hui</span>
+              <span class="card-num">01</span>
+              <div><span class="card-cat">Vidéo · Événement</span><h3>Films &amp; couvertures</h3></div>
+              <span class="card-arrow">↗</span>
             </figcaption>
           </figure>
 
-          <figure class="tile reveal">
-            <div class="tile-media"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Reportage événementiel, foule et lumières — visuel de démonstration" loading="lazy"></div>
+          <figure class="work-card" data-cat="photo">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Reportage événementiel — visuel de démonstration" loading="lazy"></div>
             <figcaption>
-              <span class="tile-cat">Photographie</span>
-              <h3>Reportages &amp; couvertures</h3>
-              <span class="tile-year">Sur le terrain</span>
+              <span class="card-num">02</span>
+              <div><span class="card-cat">Photographie</span><h3>Reportages</h3></div>
+              <span class="card-arrow">↗</span>
             </figcaption>
           </figure>
 
-          <figure class="tile reveal">
-            <div class="tile-media"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=80" alt="Objectif et savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
+          <figure class="work-card" data-cat="photo">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=80" alt="Savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
             <figcaption>
-              <span class="tile-cat">Brand content</span>
-              <h3>Images de marque</h3>
-              <span class="tile-year">Communication</span>
+              <span class="card-num">03</span>
+              <div><span class="card-cat">Brand content</span><h3>Images de marque</h3></div>
+              <span class="card-arrow">↗</span>
             </figcaption>
           </figure>
 
-          <figure class="tile tile-wide reveal">
-            <div class="tile-media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier de formation avec un groupe — visuel de démonstration" loading="lazy"></div>
+          <figure class="work-card card-large" data-cat="facilitation">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier de formation — visuel de démonstration" loading="lazy"></div>
             <figcaption>
-              <span class="tile-cat">Facilitation · AIESEC</span>
-              <h3>Former, fédérer, transmettre</h3>
-              <span class="tile-year">Depuis 2023</span>
+              <span class="card-num">04</span>
+              <div><span class="card-cat">Facilitation · AIESEC</span><h3>Former &amp; transmettre</h3></div>
+              <span class="card-arrow">↗</span>
             </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ====================== APPROCHE ====================== -->
-    <section class="section approach" id="apropos">
-      <div class="container approach-grid">
-        <div class="approach-text reveal">
-          <span class="eyebrow-plain">02 — Approche</span>
-          <h2 data-split>Photographe, vidéaste <em>et passeur.</em></h2>
-          <p class="lead">Une bonne image ne suffit pas. Elle doit servir un message clair, une audience précise et un objectif assumé.</p>
-          <p>Je suis Aristide Cédric Bassolé. Au Studio TOPCART226, je produis des films et des reportages. Avec AIESEC, je forme et je fédère des jeunes autour de projets concrets. Ce double ancrage — <strong>production</strong> et <strong>transmission</strong> — me permet de comprendre ce qu'une organisation veut dire, de le traduire en images, puis de donner à d'autres les clés pour le faire à leur tour.</p>
-          <p>Certifié en marketing numérique (DCLIC — OIF), je pense aussi la diffusion : le bon format, le bon canal, le bon ton.</p>
+    <!-- ============ APPROCHE ============ -->
+    <section class="section approach" id="approche" data-label="03 — APPROCHE">
+      <div class="approach-media">
+        <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1200&q=80" alt="Public réuni lors d'un événement — visuel de démonstration" loading="lazy">
+        <span class="approach-media-label">UNE IMAGE NE PARLE QUE SI ELLE EST COMPRISE.</span>
+      </div>
+      <div class="approach-content">
+        <div class="section-index">02 / APPROCHE</div>
+        <h2 data-split>Photographe,<br>vidéaste <em>et passeur.</em></h2>
+        <p class="approach-lead">Une bonne image ne suffit pas. Elle doit servir un message clair, une audience précise et un objectif assumé.</p>
+        <p>Je suis Aristide Cédric Bassolé, indépendant basé au Burkina Faso. Je produis des films, des reportages et des contenus de marque pour les entreprises, ONG et institutions — du concept au montage final.</p>
+        <p>À cela s'ajoute une casquette de facilitateur : animer des ateliers de leadership et de développement personnel avec les jeunes, notamment chez AIESEC. Produire et transmettre sont pour moi le même métier.</p>
+        <div class="principles">
+          <div><span>01</span><strong>Voir juste</strong><p>Comprendre ce que vous voulez dire avant de chercher comment le montrer.</p></div>
+          <div><span>02</span><strong>Cadrer fort</strong><p>Construire une image cohérente avec votre identité et votre audience.</p></div>
+          <div><span>03</span><strong>Faire circuler</strong><p>Penser la diffusion dès la prise de vue : format, canal et ton.</p></div>
+        </div>
+      </div>
+    </section>
 
-          <div class="approach-meta">
-            <div><span>Basé à</span><strong>Koudougou / Ouagadougou, BF</strong></div>
-            <div><span>Langues</span><strong>Français · Anglais</strong></div>
-            <div><span>Disponible pour</span><strong>Projets locaux &amp; internationaux</strong></div>
+    <!-- ============ EXPERTISE ============ -->
+    <section class="section expertise" id="expertise" data-label="04 — EXPERTISE">
+      <div class="container">
+        <div class="section-head compact">
+          <div class="section-index">03 / EXPERTISE</div>
+          <h2 data-split>Mes <em>expertises</em>.</h2>
+        </div>
+        <div class="accordion" id="accordion">
+          <div class="acc-item is-open">
+            <button class="acc-trigger" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title">Photographie professionnelle</span><span class="acc-icon">+</span></button>
+            <div class="acc-panel"><div class="acc-inner"><p>Portraits, reportages, couvertures d'événements et visuels de marque. Des images nettes, pensées pour votre ligne éditoriale et votre usage réel.</p><div class="acc-tags"><span>Reportage</span><span>Portrait</span><span>Événement</span></div></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title">Vidéographie &amp; production</span><span class="acc-icon">+</span></button>
+            <div class="acc-panel"><div class="acc-inner"><p>Tournage, réalisation et montage : films commerciaux, contenus pour réseaux sociaux, interviews et formats pour médias digitaux. Du concept à la livraison.</p><div class="acc-tags"><span>Tournage</span><span>Montage</span><span>Étalonnage</span></div></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title">Storytelling de marque</span><span class="acc-icon">+</span></button>
+            <div class="acc-panel"><div class="acc-inner"><p>Donner une voix et un visage à votre organisation. Construire un récit visuel qui crée de la confiance et reste en mémoire.</p><div class="acc-tags"><span>Brand content</span><span>Identité</span><span>Récit visuel</span></div></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">04</span><span class="acc-title">Communication &amp; marketing digital</span><span class="acc-icon">+</span></button>
+            <div class="acc-panel"><div class="acc-inner"><p>Certifié en marketing numérique (DCLIC — Organisation internationale de la Francophonie). Penser le contenu pour les bons canaux, avec les bons codes.</p><div class="acc-tags"><span>Stratégie</span><span>Réseaux sociaux</span><span>OIF</span></div></div></div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">05</span><span class="acc-title">Facilitation &amp; leadership des jeunes</span><span class="acc-icon">+</span></button>
+            <div class="acc-panel"><div class="acc-inner"><p>Animer des sessions de soft skills, fédérer des équipes multiculturelles et transmettre des compétences concrètes. Une pratique développée chez AIESEC in Burkina Faso.</p><div class="acc-tags"><span>Leadership</span><span>Soft skills</span><span>AIESEC</span></div></div></div>
           </div>
         </div>
-
-        <div class="approach-statement reveal">
-          <span class="statement-index">AC / 02</span>
-          <p>« La plupart des marques n'ont pas un problème de <em>contenu</em>. Elles ont un problème de <em>communication</em>. »</p>
-          <span class="statement-by">Ma ligne de conduite</span>
-        </div>
       </div>
     </section>
 
-    <!-- ====================== EXPERTISE ====================== -->
-    <section class="section expertise" id="expertise">
+    <!-- ============ PARCOURS ============ -->
+    <section class="section parcours" id="parcours" data-label="05 — PARCOURS">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow-plain">03 — Expertise</span>
-          <h2 data-split>De l'idée à l'image, <em>de l'image au message.</em></h2>
+        <div class="section-head compact">
+          <div class="section-index">04 / PARCOURS</div>
+          <h2 data-split>Une trajectoire <em>en mouvement.</em></h2>
         </div>
-
-        <div class="service-list">
-          <article class="service-row reveal">
-            <span class="service-num">01</span>
-            <div class="service-main"><h3>Photographie professionnelle</h3><p>Portraits, reportages, événements et visuels de marque : des images nettes, cohérentes et pensées pour votre ligne éditoriale.</p></div>
-            <div class="service-tags"><span>Reportage</span><span>Portrait</span><span>Événement</span></div>
+        <div class="timeline" id="timeline">
+          <article class="tl-item is-current reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta"><span>AUJOURD'HUI</span><span class="tl-badge">En cours</span></div>
+            <h3>Photographe &amp; vidéaste indépendant</h3>
+            <p class="tl-place">À mon compte — Burkina Faso</p>
+            <p>Films commerciaux, reportages, contenus digitaux et accompagnement en communication pour entreprises, ONG et institutions.</p>
           </article>
-          <article class="service-row reveal">
-            <span class="service-num">02</span>
-            <div class="service-main"><h3>Vidéographie &amp; production</h3><p>Tournage, réalisation et montage au Studio TOPCART226 : films commerciaux, contenus sociaux et formats pour médias digitaux.</p></div>
-            <div class="service-tags"><span>Tournage</span><span>Montage</span><span>Film</span></div>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta"><span>2024 — 2026</span></div>
+            <h3>Stagiaire → Assistant vidéaste → Vidéaste</h3>
+            <p class="tl-place">Studio TOPCART226 — Koudougou</p>
+            <p>Production audiovisuelle et contenus pour un média digital : tournage, montage, films et couvertures d'événements.</p>
           </article>
-          <article class="service-row reveal">
-            <span class="service-num">03</span>
-            <div class="service-main"><h3>Storytelling de marque</h3><p>Donner une voix et un visage à votre organisation. Construire un récit visuel qui crée de la confiance et reste en mémoire.</p></div>
-            <div class="service-tags"><span>Récit visuel</span><span>Brand content</span></div>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta"><span>DEPUIS AVRIL 2023</span></div>
+            <h3>Leader d'équipes &amp; facilitateur de jeunes</h3>
+            <p class="tl-place">AIESEC in Burkina Faso — 100+ pays</p>
+            <p>Encadrement d'équipes multiculturelles, ateliers de leadership et pilotage de projets à impact.</p>
           </article>
-          <article class="service-row reveal">
-            <span class="service-num">04</span>
-            <div class="service-main"><h3>Communication &amp; marketing digital</h3><p>Certifié en marketing numérique (DCLIC — OIF) : penser le contenu pour les bons canaux, avec les bons codes et un objectif clair.</p></div>
-            <div class="service-tags"><span>Stratégie</span><span>Réseaux sociaux</span><span>OIF</span></div>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta"><span>CERTIFICATION</span></div>
+            <h3>Marketing numérique</h3>
+            <p class="tl-place">DCLIC — Organisation internationale de la Francophonie</p>
           </article>
-          <article class="service-row reveal">
-            <span class="service-num">05</span>
-            <div class="service-main"><h3>Facilitation &amp; formation des jeunes</h3><p>Animer des sessions de leadership et de développement personnel, fédérer des équipes multiculturelles et transmettre des compétences concrètes.</p></div>
-            <div class="service-tags"><span>Leadership</span><span>Soft skills</span><span>AIESEC</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ====================== PARCOURS ====================== -->
-    <section class="section parcours" id="parcours">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow-plain">04 — Parcours</span>
-          <h2 data-split>Une progression <em>sur le terrain.</em></h2>
-        </div>
-
-        <div class="timeline">
-          <article class="timeline-item current reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <div class="timeline-top"><span class="timeline-tag">2024 — Aujourd'hui</span><span class="badge-current">En cours</span></div>
-              <h3>Stagiaire → Assistant vidéaste → Vidéaste</h3>
-              <span class="timeline-org">Studio TOPCART226 — Koudougou, Burkina Faso</span>
-              <p>Production audiovisuelle et contenus digitaux : tournage, réalisation, montage, films commerciaux et formats pour Topcart226 TV, média digital du studio.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <div class="timeline-top"><span class="timeline-tag">Depuis avril 2023</span></div>
-              <h3>Leader d'équipes &amp; facilitateur de jeunes</h3>
-              <span class="timeline-org">AIESEC in Burkina Faso — présent dans 100+ pays</span>
-              <p>Encadrement d'équipes multiculturelles, animation de formations en leadership et développement personnel, pilotage de projets à impact.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <div class="timeline-top"><span class="timeline-tag">Certification</span></div>
-              <h3>Marketing numérique</h3>
-              <span class="timeline-org">DCLIC — Organisation internationale de la Francophonie (OIF)</span>
-              <p>Stratégie et outils de communication digitale, pour penser un contenu au-delà de sa production.</p>
-            </div>
-          </article>
-          <article class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-body">
-              <div class="timeline-top"><span class="timeline-tag">Formation académique</span></div>
-              <h3>Études en sciences de la vie et de la terre (SVT)</h3>
-              <span class="timeline-org">Université Norbert Zongo de Koudougou</span>
-              <p>Un parcours scientifique complété par une pratique autodidacte de l'image et de la communication.</p>
-            </div>
+          <article class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-meta"><span>FORMATION</span></div>
+            <h3>Études en sciences de la vie et de la terre</h3>
+            <p class="tl-place">Université Norbert Zongo de Koudougou</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ====================== FACILITATION ====================== -->
-    <section class="facilitation">
-      <div class="facilitation-media">
-        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Groupe réuni en session de formation — visuel de démonstration" loading="lazy">
-      </div>
-      <div class="facilitation-copy">
-        <span class="eyebrow-plain">05 — Transmission</span>
-        <h2 data-split>Former la relève, <em>une image à la fois.</em></h2>
-        <p>Animer un groupe de jeunes, c'est créer les conditions pour que chacun ose prendre la parole et agir. Chez AIESEC, j'accompagne des équipes multiculturelles et je conçois des ateliers de leadership et de soft skills qui se prolongent bien après la séance.</p>
-        <p>Cette dimension de facilitateur nourrit mon travail de communicant : elle me rappelle qu'une image ne prend tout son sens que lorsqu'elle est comprise, partagée et réutilisée.</p>
-        <a href="#contact" class="text-link">Proposer un atelier <span>→</span></a>
-      </div>
-    </section>
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact" data-label="06 — CONTACT">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container contact-inner">
+        <div class="section-index">05 / CONTACT</div>
+        <h2 data-split>Parlons de votre<br><em>communication.</em></h2>
+        <p class="contact-lead">Un film, un reportage, une stratégie de contenu ou un atelier pour vos jeunes ? Dites-moi ce que vous voulez dire — je vous aide à le montrer.</p>
 
-    <!-- ====================== CONTACT ====================== -->
-    <section class="section contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy reveal">
-          <span class="eyebrow-plain">06 — Contact</span>
-          <h2 data-split>Parlons de votre <em>communication.</em></h2>
-          <p>Un film, un reportage, une stratégie de contenu ou une formation pour vos jeunes ? Dites-moi ce que vous voulez dire — je vous aide à le montrer.</p>
+        <a class="email-link" href="mailto:aristidecedricbassole@gmail.com">
+          <span>aristidecedricbassole@gmail.com</span><i>↗</i>
+        </a>
 
-          <div class="contact-links">
-            <a href="mailto:votre.email@exemple.com" class="contact-link"><span class="contact-icon">✉</span><span><small>E-mail</small><strong>votre.email@exemple.com</strong></span></a>
-            <a href="https://wa.me/22656162255" target="_blank" rel="noopener" class="contact-link"><span class="contact-icon">✆</span><span><small>WhatsApp</small><strong>+226 56 16 22 55</strong></span></a>
-            <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener" class="contact-link"><span class="contact-icon">in</span><span><small>LinkedIn</small><strong>Aristide Cédric Bassolé</strong></span></a>
-            <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener" class="contact-link"><span class="contact-icon">◎</span><span><small>Instagram</small><strong>@aristide_cedric_</strong></span></a>
-            <a href="https://www.facebook.com/aristidecedric.bassole.7/" target="_blank" rel="noopener" class="contact-link"><span class="contact-icon">f</span><span><small>Facebook</small><strong>Aristide Cédric Bassolé</strong></span></a>
-            <a href="https://www.facebook.com/Topcart226/" target="_blank" rel="noopener" class="contact-link"><span class="contact-icon">▶</span><span><small>Studio</small><strong>Topcart226</strong></span></a>
+        <div class="contact-bottom">
+          <div class="contact-socials">
+            <a href="https://wa.me/22656162255" target="_blank" rel="noopener" class="link-hover">WhatsApp ↗</a>
+            <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener" class="link-hover">LinkedIn ↗</a>
+            <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener" class="link-hover">Instagram ↗</a>
+            <a href="https://www.facebook.com/aristidecedric.bassole.7/" target="_blank" rel="noopener" class="link-hover">Facebook ↗</a>
           </div>
+          <p class="contact-place">Basé au Burkina Faso<br>Disponible pour des projets internationaux</p>
         </div>
-
-        <form class="contact-form reveal" id="contactForm">
-          <h3>Démarrer une conversation</h3>
-          <div class="field"><label for="name">Votre nom</label><input type="text" id="name" name="name" required placeholder="Comment vous appelez-vous ?"></div>
-          <div class="field"><label for="email">Votre e-mail</label><input type="email" id="email" name="email" required placeholder="vous@exemple.com"></div>
-          <div class="field">
-            <label for="subject">Objet</label>
-            <select id="subject" name="subject">
-              <option>Production vidéo</option>
-              <option>Reportage photo</option>
-              <option>Communication / marketing digital</option>
-              <option>Formation / facilitation de jeunes</option>
-              <option>Partenariat</option>
-              <option>Autre demande</option>
-            </select>
-          </div>
-          <div class="field"><label for="message">Votre message</label><textarea id="message" name="message" rows="5" required placeholder="Que souhaitez-vous communiquer ?"></textarea></div>
-          <button type="submit" class="btn">Envoyer le message</button>
-          <p class="form-note">Le message s'ouvrira dans votre messagerie, prêt à être envoyé.</p>
-        </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© <span id="year">2026</span> Aristide Cédric Bassolé · Photographe, vidéaste &amp; facilitateur de jeunes.</p>
-      <a href="#top">Retour en haut ↑</a>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <p>© <span id="year">2026</span> Aristide Cédric Bassolé</p>
+      <a href="#top" class="link-hover">Retour en haut ↑</a>
     </div>
+    <div class="footer-word" aria-hidden="true">AC<span>.</span></div>
   </footer>
 
   <script src="script.js"></script>
