@@ -14,6 +14,9 @@
 </head>
 <body>
 
+  <!-- Barre de progression de lecture -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
   <!-- ====================== EN-TÊTE ====================== -->
   <header class="site-header" id="top">
     <div class="container nav-wrap">
@@ -64,8 +67,8 @@
         <div class="hero-bottom">
           <div class="hero-credentials">
             <div><strong>2024</strong><span>chez TOPCART226</span></div>
-            <div><strong>100+</strong><span>pays avec AIESEC</span></div>
-            <div><strong>03</strong><span>expertises réunies</span></div>
+            <div><strong data-count="100" data-suffix="+">100+</strong><span>pays avec AIESEC</span></div>
+            <div><strong data-count="3" data-pad="2">03</strong><span>expertises réunies</span></div>
           </div>
           <a href="#realisations" class="scroll-cue" aria-label="Descendre vers les travaux">
             <span>Défiler</span><span class="scroll-line"></span>
@@ -91,13 +94,13 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow-plain">01 — Travaux sélectionnés</span>
-          <h2>Des images qui <em>font le travail.</em></h2>
+          <h2 data-split>Des images qui <em>font le travail.</em></h2>
           <p class="section-sub">Production vidéo, reportage photo, contenus de marque et facilitation. <span class="demo-note">Visuels de démonstration — à remplacer par vos propres images.</span></p>
         </div>
 
         <div class="gallery">
           <figure class="tile tile-wide reveal">
-            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80" alt="Couverture d'événement et lumières de scène — visuel de démonstration" loading="lazy">
+            <div class="tile-media"><img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1400&q=80" alt="Couverture d'événement et lumières de scène — visuel de démonstration" loading="lazy"></div>
             <figcaption>
               <span class="tile-cat">Vidéo · Studio TOPCART226</span>
               <h3>Films &amp; productions</h3>
@@ -106,7 +109,7 @@
           </figure>
 
           <figure class="tile reveal">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Reportage événementiel, foule et lumières — visuel de démonstration" loading="lazy">
+            <div class="tile-media"><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1000&q=80" alt="Reportage événementiel, foule et lumières — visuel de démonstration" loading="lazy"></div>
             <figcaption>
               <span class="tile-cat">Photographie</span>
               <h3>Reportages &amp; couvertures</h3>
@@ -115,7 +118,7 @@
           </figure>
 
           <figure class="tile reveal">
-            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=80" alt="Objectif et savoir-faire photographique — visuel de démonstration" loading="lazy">
+            <div class="tile-media"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1000&q=80" alt="Objectif et savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
             <figcaption>
               <span class="tile-cat">Brand content</span>
               <h3>Images de marque</h3>
@@ -124,7 +127,7 @@
           </figure>
 
           <figure class="tile tile-wide reveal">
-            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier de formation avec un groupe — visuel de démonstration" loading="lazy">
+            <div class="tile-media"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1400&q=80" alt="Atelier de formation avec un groupe — visuel de démonstration" loading="lazy"></div>
             <figcaption>
               <span class="tile-cat">Facilitation · AIESEC</span>
               <h3>Former, fédérer, transmettre</h3>
@@ -140,7 +143,7 @@
       <div class="container approach-grid">
         <div class="approach-text reveal">
           <span class="eyebrow-plain">02 — Approche</span>
-          <h2>Photographe, vidéaste <em>et passeur.</em></h2>
+          <h2 data-split>Photographe, vidéaste <em>et passeur.</em></h2>
           <p class="lead">Une bonne image ne suffit pas. Elle doit servir un message clair, une audience précise et un objectif assumé.</p>
           <p>Je suis Aristide Cédric Bassolé. Au Studio TOPCART226, je produis des films et des reportages. Avec AIESEC, je forme et je fédère des jeunes autour de projets concrets. Ce double ancrage — <strong>production</strong> et <strong>transmission</strong> — me permet de comprendre ce qu'une organisation veut dire, de le traduire en images, puis de donner à d'autres les clés pour le faire à leur tour.</p>
           <p>Certifié en marketing numérique (DCLIC — OIF), je pense aussi la diffusion : le bon format, le bon canal, le bon ton.</p>
@@ -165,7 +168,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow-plain">03 — Expertise</span>
-          <h2>De l'idée à l'image, <em>de l'image au message.</em></h2>
+          <h2 data-split>De l'idée à l'image, <em>de l'image au message.</em></h2>
         </div>
 
         <div class="service-list">
@@ -203,7 +206,7 @@
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow-plain">04 — Parcours</span>
-          <h2>Une progression <em>sur le terrain.</em></h2>
+          <h2 data-split>Une progression <em>sur le terrain.</em></h2>
         </div>
 
         <div class="timeline">
@@ -254,7 +257,7 @@
       </div>
       <div class="facilitation-copy">
         <span class="eyebrow-plain">05 — Transmission</span>
-        <h2>Former la relève, <em>une image à la fois.</em></h2>
+        <h2 data-split>Former la relève, <em>une image à la fois.</em></h2>
         <p>Animer un groupe de jeunes, c'est créer les conditions pour que chacun ose prendre la parole et agir. Chez AIESEC, j'accompagne des équipes multiculturelles et je conçois des ateliers de leadership et de soft skills qui se prolongent bien après la séance.</p>
         <p>Cette dimension de facilitateur nourrit mon travail de communicant : elle me rappelle qu'une image ne prend tout son sens que lorsqu'elle est comprise, partagée et réutilisée.</p>
         <a href="#contact" class="text-link">Proposer un atelier <span>→</span></a>
@@ -266,7 +269,7 @@
       <div class="container contact-grid">
         <div class="contact-copy reveal">
           <span class="eyebrow-plain">06 — Contact</span>
-          <h2>Parlons de votre <em>communication.</em></h2>
+          <h2 data-split>Parlons de votre <em>communication.</em></h2>
           <p>Un film, un reportage, une stratégie de contenu ou une formation pour vos jeunes ? Dites-moi ce que vous voulez dire — je vous aide à le montrer.</p>
 
           <div class="contact-links">

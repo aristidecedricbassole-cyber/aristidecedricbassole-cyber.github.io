@@ -32,6 +32,12 @@ Expériences présentées :
 
 Tikerama a été retiré.
 
+**Motion design :** texte découpé mot par mot à l'apparition, parallaxe du hero
+et des images, barre de progression de lecture, compteurs animés, révélations en
+cascade, ligne de parcours qui se dessine au scroll et boutons magnétiques.
+Tout est désactivé automatiquement si l'utilisateur préfère réduire les animations
+(`prefers-reduced-motion`).
+
 **Visuels :** les photos présentes sont des images libres de droits (Unsplash)
 utilisées comme **visuels de démonstration**, clairement signalés sur le site.
 Remplacez les URLs `images.unsplash.com/...` dans `index.html` par vos propres
