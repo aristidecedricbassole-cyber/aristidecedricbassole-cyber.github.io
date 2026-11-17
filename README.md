@@ -32,6 +32,11 @@ Expériences présentées :
 
 Tikerama a été retiré.
 
+**Visuels :** les photos présentes sont des images libres de droits (Unsplash)
+utilisées comme **visuels de démonstration**, clairement signalés sur le site.
+Remplacez les URLs `images.unsplash.com/...` dans `index.html` par vos propres
+photos (ex. `assets/votre-photo.jpg`) avant une utilisation professionnelle.
+
 ## ✏️ À personnaliser
 
 1. **Photo** : déposez votre portrait dans `assets/photo.jpg` (le placeholder

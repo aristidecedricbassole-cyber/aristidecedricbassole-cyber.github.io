@@ -26,6 +26,14 @@ if (navToggle && nav) {
   });
 }
 
+/* ---------------------- En-tête au scroll ---------------------- */
+const siteHeader = document.querySelector('.site-header');
+if (siteHeader) {
+  const updateHeader = () => siteHeader.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+}
+
 /* ---------------------- Révélation au scroll ---------------------- */
 const revealEls = document.querySelectorAll('.reveal');
 
