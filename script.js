@@ -236,44 +236,124 @@ if (form) form.addEventListener('submit', (e) => {
   window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('[Portfolio] ' + type) + '&body=' + encodeURIComponent(body);
 });
 
-/* ====================== LIGHTBOX ====================== */
+/* ====================== CARROUSEL IMMERSIF ====================== */
+const scStage = document.getElementById('scStage');
+const scSlides = document.querySelectorAll('.sc-slide');
+const scCurrent = document.getElementById('scCurrent');
+const scBar = document.getElementById('scBar');
+const scThumbs = document.getElementById('scThumbs');
 const lightbox = document.getElementById('lightbox');
 const lbImage = document.getElementById('lbImage');
 const lbCaption = document.getElementById('lbCaption');
 const lbCount = document.getElementById('lbCount');
-const triggers = document.querySelectorAll('.lightbox-trigger');
-const galleryImages = ['01','02','03','04','05','06','07'].map((n) => 'assets/sonabel-' + n + '.jpg');
-let lbIndex = 0;
 
-function showLightbox(index) {
-  if (!lightbox || !galleryImages.length) return;
-  lbIndex = (index + galleryImages.length) % galleryImages.length;
-  if (lbImage) { lbImage.src = galleryImages[lbIndex]; lbImage.alt = 'Photo ' + (lbIndex + 1) + ' du reportage'; }
-  const num = String(lbIndex + 1).padStart(2, '0');
-  if (lbCount) lbCount.textContent = num + ' / ' + String(galleryImages.length).padStart(2, '0');
+let scIndex = 0;
+const AUTOPLAY_MS = 4500;
+
+// Construire les miniatures
+if (scThumbs) {
+  scSlides.forEach((slide, i) => {
+    const thumb = document.createElement('img');
+    thumb.src = slide.src;
+    thumb.alt = 'Photo ' + (i + 1);
+    thumb.dataset.index = i;
+    if (i === 0) thumb.classList.add('is-active');
+    scThumbs.appendChild(thumb);
+  });
+}
+const scThumbImgs = scThumbs ? Array.from(scThumbs.querySelectorAll('img')) : [];
+
+function showSlide(index) {
+  if (!scSlides.length) return;
+  scIndex = (index + scSlides.length) % scSlides.length;
+  scSlides.forEach((s, i) => s.classList.toggle('is-active', i === scIndex));
+  scThumbImgs.forEach((t, i) => t.classList.toggle('is-active', i === scIndex));
+  if (scCurrent) scCurrent.textContent = String(scIndex + 1).padStart(2, '0');
+  scThumbImgs[scIndex]?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
+  restartProgress();
+}
+
+let progressStart = performance.now();
+let progressRaf = null;
+function animateProgress(now) {
+  if (!scBar) return;
+  const elapsed = now - progressStart;
+  const p = reduceMotion ? 1 : Math.min(elapsed / AUTOPLAY_MS, 1);
+  scBar.style.width = (p * 100) + '%';
+  if (p < 1) progressRaf = requestAnimationFrame(animateProgress);
+  else nextSlide();
+}
+function restartProgress() {
+  progressStart = performance.now();
+  if (progressRaf) cancelAnimationFrame(progressRaf);
+  progressRaf = requestAnimationFrame(animateProgress);
+}
+function nextSlide() { showSlide(scIndex + 1); }
+function prevSlide() { showSlide(scIndex - 1); }
+
+// Autoplay seulement quand le carrousel est visible
+if ('IntersectionObserver' in window && scStage) {
+  let playing = false;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting && !playing) { playing = true; restartProgress(); }
+      else if (!e.isIntersecting && playing) { playing = false; if (progressRaf) cancelAnimationFrame(progressRaf); }
+    });
+  }, { threshold: 0.35 });
+  obs.observe(scStage);
+} else {
+  restartProgress();
+}
+
+document.getElementById('scPrev')?.addEventListener('click', prevSlide);
+document.getElementById('scNext')?.addEventListener('click', nextSlide);
+scThumbImgs.forEach((t) => t.addEventListener('click', () => showSlide(Number(t.dataset.index))));
+// Pause au survol
+scStage?.addEventListener('pointerenter', () => { if (progressRaf) cancelAnimationFrame(progressRaf); });
+scStage?.addEventListener('pointerleave', restartProgress);
+
+/* Lightbox depuis le carrousel */
+function openLightbox() {
+  if (!lightbox || !scSlides.length) return;
+  const slide = scSlides[scIndex];
+  if (lbImage) { lbImage.src = slide.src; lbImage.alt = slide.alt; }
+  const num = String(scIndex + 1).padStart(2, '0');
+  if (lbCount) lbCount.textContent = num + ' / ' + String(scSlides.length).padStart(2, '0');
   if (lbCaption) lbCaption.textContent = 'SONABEL — Reportage industriel · ' + num;
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden', 'false');
   document.body.classList.add('lb-open');
+  if (progressRaf) cancelAnimationFrame(progressRaf);
 }
 function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.remove('open');
   lightbox.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('lb-open');
+  restartProgress();
 }
-
-triggers.forEach((el) => el.addEventListener('click', () => showLightbox(Number(el.dataset.index))));
+document.getElementById('scZoom')?.addEventListener('click', openLightbox);
+scStage?.addEventListener('click', (e) => { if (e.target.classList.contains('sc-slide')) openLightbox(); });
+function lbNavigate(dir) {
+  scIndex = (scIndex + dir + scSlides.length) % scSlides.length;
+  scSlides.forEach((s, i) => s.classList.toggle('is-active', i === scIndex));
+  scThumbImgs.forEach((t, i) => t.classList.toggle('is-active', i === scIndex));
+  if (scCurrent) scCurrent.textContent = String(scIndex + 1).padStart(2, '0');
+  const slide = scSlides[scIndex];
+  if (lbImage) { lbImage.src = slide.src; lbImage.alt = slide.alt; }
+  const num = String(scIndex + 1).padStart(2, '0');
+  if (lbCount) lbCount.textContent = num + ' / ' + String(scSlides.length).padStart(2, '0');
+  if (lbCaption) lbCaption.textContent = 'SONABEL — Reportage industriel · ' + num;
+}
 document.getElementById('lbClose')?.addEventListener('click', closeLightbox);
-document.getElementById('lbPrev')?.addEventListener('click', () => showLightbox(lbIndex - 1));
-document.getElementById('lbNext')?.addEventListener('click', () => showLightbox(lbIndex + 1));
+document.getElementById('lbPrev')?.addEventListener('click', () => lbNavigate(-1));
+document.getElementById('lbNext')?.addEventListener('click', () => lbNavigate(1));
 if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
 document.addEventListener('keydown', (e) => {
   if (!lightbox?.classList.contains('open')) return;
   if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
-  if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
+  if (e.key === 'ArrowLeft') lbNavigate(-1);
+  if (e.key === 'ArrowRight') lbNavigate(1);
 });
 
 /* ====================== ANNÉE ====================== */

@@ -4,21 +4,17 @@
 **Raccourci :** https://bit.ly/AristideCedricBassole
 **E-mail :** aristidecedricbassole@gmail.com
 
-## Projets réels
+## Projet réel — Carrousel SONABEL
 
-**SONABEL — Reportage industriel** (7 photos récupérées du Google Drive, optimisées à 1400px) :
-- Carte en vedette avec couverture au format 16/10 (cadrage `center 42%` pour montrer les techniciens)
-- Miniatures agrandies (82×64 px)
-- **Lightbox** : clic sur une photo → plein écran, flèches ← →, touche Échap, compteur 01/07
-- Badge « ✓ Projet réel », filtres mis à jour (Tous 05, Photo 03)
+Les 7 photos du reportage SONABEL sont affichées dans un **carrousel immersif** :
+- **Photos entières** : `object-fit: contain` — aucun recadrage, le format d'origine est respecté
+- **Motion design** : transition fondu + zoom à chaque changement, auto-play toutes les 4,5 s (pause au survol, pause hors écran)
+- Barre de progression animée, compteur « 01 / 07 », flèches ← →, miniatures cliquables
+- Bouton « Agrandir » → lightbox plein écran avec navigation clavier
 
-## Photos
+## Autres
 
-- `assets/portrait.png` : vrai portrait (fond bleu)
-- `assets/sonabel-01.jpg` → `07.jpg` : reportage réel SONABEL
-- Autres visuels : démonstration
-
-## Motion design
-
-Loader 00→100 %, split-text, parallaxe, curseur, progression, révélations,
-recherche ⌘K, thème sombre, horloge GMT, lightbox. Désactivé avec `prefers-reduced-motion`.
+- `assets/portrait.png` : vrai portrait (fond bleu) — hero + À propos
+- Autres visuels de projet : démonstration
+- Motion design global : loader, split-text, parallaxe, curseur, recherche ⌘K, thème sombre, horloge GMT
+- `prefers-reduced-motion` respecté

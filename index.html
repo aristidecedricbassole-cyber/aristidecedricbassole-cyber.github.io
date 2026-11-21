@@ -328,25 +328,31 @@
         </div>
 
         <div class="project-grid" id="projectGrid">
-          <!-- PROJET RÉEL -->
-          <article class="project-card project-featured reveal" data-cat="photo">
-            <div class="pc-media">
-              <img class="lightbox-trigger" src="assets/sonabel-01.jpg" data-full="assets/sonabel-01.jpg" data-index="0" alt="Reportage SONABEL — techniciens en intervention sur un transformateur">
+          <!-- PROJET RÉEL — CARROUSEL IMMERSIF -->
+          <article class="story-carousel reveal" id="storyCarousel" data-cat="photo">
+            <div class="sc-head">
               <span class="pc-status real">✓ Projet réel</span>
-              <div class="pc-gallery">
-                <img class="lightbox-trigger" src="assets/sonabel-02.jpg" data-full="assets/sonabel-02.jpg" data-index="1" alt="Technicien en hauteur">
-                <img class="lightbox-trigger" src="assets/sonabel-03.jpg" data-full="assets/sonabel-03.jpg" data-index="2" alt="Technicien au travail">
-                <img class="lightbox-trigger" src="assets/sonabel-04.jpg" data-full="assets/sonabel-04.jpg" data-index="3" alt="Intervention sur site">
-                <span>07</span>
-              </div>
+              <span class="sc-title">SONABEL — Reportage industriel</span>
+              <span class="sc-counter"><b id="scCurrent">01</b> / 07</span>
             </div>
-            <div class="pc-body">
-              <div class="pc-tags"><span>Photo</span><span>Reportage</span><span>Industrie</span></div>
-              <h3>SONABEL — Reportage industriel</h3>
-              <p>Un reportage photo sur le terrain avec les équipes de la SONABEL : installations électriques, travail en hauteur et visages des techniciens au cœur de l'action.</p>
-              <div class="pc-stats"><span><strong>07</strong> photos livrées</span><span><strong>1</strong> site · CHNT</span></div>
-              <a href="#contact" class="pc-link">Voir le reportage complet →</a>
+
+            <div class="sc-stage" id="scStage">
+              <img class="sc-slide is-active" src="assets/sonabel-01.jpg" data-index="0" alt="Reportage SONABEL — intervention sur transformateur">
+              <img class="sc-slide" src="assets/sonabel-02.jpg" data-index="1" alt="Technicien travaillant en hauteur">
+              <img class="sc-slide" src="assets/sonabel-03.jpg" data-index="2" alt="Technicien au travail">
+              <img class="sc-slide" src="assets/sonabel-04.jpg" data-index="3" alt="Intervention sur site">
+              <img class="sc-slide" src="assets/sonabel-05.jpg" data-index="4" alt="Équipement de mesure">
+              <img class="sc-slide" src="assets/sonabel-06.jpg" data-index="5" alt="Vue d'ensemble des transformateurs">
+              <img class="sc-slide" src="assets/sonabel-07.jpg" data-index="6" alt="Installation électrique SONABEL">
+              <button class="sc-nav sc-prev" id="scPrev" aria-label="Photo précédente">←</button>
+              <button class="sc-nav sc-next" id="scNext" aria-label="Photo suivante">→</button>
             </div>
+
+            <div class="sc-foot">
+              <div class="sc-thumbs" id="scThumbs"></div>
+              <button class="sc-zoom" id="scZoom">Agrandir <span>⤢</span></button>
+            </div>
+            <div class="sc-progress"><span id="scBar"></span></div>
           </article>
 
           <article class="project-card" data-cat="video">
