@@ -1,39 +1,39 @@
 # Portfolio — Aristide Cédric Bassolé
 
-Site statique (HTML / CSS / JavaScript pur), design **Noir & Vermillon**,
-motion design équilibré. Aucun framework, aucune dépendance d'images externe.
+Site statique (HTML / CSS / JavaScript pur), design **adapté de ibrahimdayende.me** :
+fond crème, typographie Bricolage Grotesque, accents bleu/vert/violet,
+section résultats avec cartes de chiffres, cartes de compétences, services,
+projets filtrables, à propos, témoignages et contact.
 
 **En ligne :** https://aristidecedricbassole-cyber.github.io/
 **Raccourci :** https://bit.ly/AristideCedricBassole
 **E-mail :** aristidecedricbassole@gmail.com
 
-## Positionnement
+## Ce qui a été adapté du modèle
+
+- En-tête : logo, navigation, recherche **⌘K / /**, bascule **mode sombre**, FR/EN, CTA
+- Hero : badge de disponibilité, horloge GMT, titre massif avec surlignage bleu et soulignement vert,
+  portrait avec cartes flottantes et badge circulaire rotatif
+- Sections numérotées 01 → 07 : Résultats, Compétences, Services, Projets, À propos, Témoignages, Contact
+- Cartes de résultats avec grands chiffres et couleurs (bleu / vert / violet)
+- Cartes de compétences avec vignettes de projets et tags
+- Services avec « Ce que ça change » + méthode en 4 étapes
+- Grille de projets filtrable + CTA
+- Profil avec faits clés (base, formation, heure, collaboration, réponse) et valeurs
+- Témoignages et formulaire de contact (ouvre la messagerie)
+- Pied de page complet avec navigation et astuce ⌘K
+
+## Contenu
 
 Photographe, vidéaste **indépendant** et facilitateur de jeunes, basé à
-**Ouagadougou (Burkina Faso)**. Ton direct et assuré. La rubrique
-« Communication & marketing digital » a volontairement été retirée.
+**Ouagadougou**. Aucune rubrique « Communication & marketing digital ».
 
-## Corrections issues de l'analyse SWOT
-
-- Statistiques honnêtes (plus de « 100+ pays via AIESEC »)
-- Images rapatriées dans `assets/` : aucune dépendance à Unsplash
-- SEO : Open Graph, Twitter Card, canonical, favicon SVG, données structurées `Person`
-- Accessibilité : lien d'évitement, focus visible, piège de focus dans l'overlay, retour du focus
-- Conversion : formulaire de contact (ouvre la messagerie)
-- Contenu : section « Méthode » en 3 temps
-- Fiabilité : sécurité anti-contenu masqué après 5 s
-
-## Sections
-
-Travaux (filtres) · Expertise (accordéon + méthode) · Facilitation · À propos ·
-Témoignages (3 emplacements « À compléter ») · Contact (e-mail + formulaire).
+Chiffres honnêtes (04 expertises, 2023, 2024, 24h, 100+ pays via AIESEC).
 
 ## À remplacer par vos éléments réels
 
-- Les 6 images de `assets/` restent des **visuels de démonstration**.
-- Les 3 cartes de témoignages sont des emplacements à compléter.
-- Ajoutez vos vraies photos, projets et retours clients pour lever les dernières
-  faiblesses identifiées (absence de preuves réelles).
+- Les 6 visuels de `assets/` restent des **images de démonstration**.
+- Les 3 témoignages sont des emplacements « À compléter ».
 
 ## Mise à jour
 

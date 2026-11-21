@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aristide Cédric Bassolé — photographe, vidéaste indépendant et facilitateur de jeunes à Ouagadougou. Images, films et récits qui restent.">
-  <meta name="theme-color" content="#0b0a09">
+  <meta name="description" content="Aristide Cédric Bassolé — photographe, vidéaste indépendant et facilitateur de jeunes à Ouagadougou. Images, films et récits qui livrent des résultats concrets.">
+  <meta name="theme-color" content="#f9f8f5">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Aristide Cédric Bassolé">
   <title>Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur</title>
@@ -13,12 +13,12 @@
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur">
-  <meta property="og:description" content="Images, films et récits qui restent. Photographe et vidéaste indépendant à Ouagadougou.">
+  <meta property="og:description" content="Images, films et récits qui livrent des résultats concrets. Indépendant à Ouagadougou.">
   <meta property="og:image" content="https://aristidecedricbassole-cyber.github.io/assets/hero.jpg">
   <meta property="og:url" content="https://aristidecedricbassole-cyber.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://aristidecedricbassole-cyber.github.io/">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a09'/%3E%3Ctext x='10' y='44' font-family='Georgia' font-size='36' fill='%23f2ede4'%3EAC%3C/text%3E%3Ccircle cx='55' cy='45' r='4' fill='%23ff4a17'/%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121521'/%3E%3Ctext x='10' y='44' font-family='Georgia' font-size='34' fill='%23f9f8f5'%3EAC%3C/text%3E%3Ccircle cx='55' cy='45' r='4' fill='%231652ca'/%3E%3C/svg%3E">
 
   <script type="application/ld+json">
   {
@@ -39,317 +39,435 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="is-loading">
+<body>
   <a class="skip-link" href="#main">Aller au contenu</a>
 
-  <!-- ============ LOADER ============ -->
-  <div class="loader" id="loader" aria-hidden="true">
-    <div class="loader-top">
-      <span class="loader-brand">AC<span>.</span></span>
-      <span class="loader-tag">Portfolio — 2026</span>
-    </div>
-    <div class="loader-center"><span id="loaderNum">00</span><i>%</i></div>
-    <div class="loader-bar"><span id="loaderBar"></span></div>
-  </div>
-
-  <!-- ============ CURSEUR ============ -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-
-  <!-- ============ PROGRESSION ============ -->
-  <div class="progress" aria-hidden="true">
-    <span class="progress-line"><i id="progressFill"></i></span>
-    <span class="progress-label" id="progressLabel">01 — ACCUEIL</span>
-  </div>
-
-  <!-- ============ HEADER ============ -->
+  <!-- ============ EN-TÊTE ============ -->
   <header class="header" id="top">
     <div class="container header-inner">
-      <a href="#accueil" class="logo" aria-label="Retour en haut">
-        <span class="logo-mark">AC<span>.</span></span>
-        <span class="logo-name">Aristide Cédric Bassolé</span>
+      <a href="#accueil" class="brand" aria-label="Accueil">
+        <span class="brand-icon">AC<span>.</span></span>
+        <span class="brand-name">Aristide Cédric Bassolé</span>
       </a>
-      <div class="header-right">
-        <span class="header-loc">OUAGADOUGOU, BF</span>
-        <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="overlay">
-          <span></span><span></span>
-          <em>MENU</em>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="#impact">Résultats</a>
+        <a href="#competences">Compétences</a>
+        <a href="#services">Services</a>
+        <a href="#projets">Projets</a>
+        <a href="#about">À propos</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" id="searchBtn" aria-label="Rechercher">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span>Rechercher</span><kbd>⌘ K</kbd>
         </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Changer de thème" title="Changer de thème">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>
+        </button>
+        <div class="lang" aria-label="Langue"><button class="active">FR</button><button>EN</button></div>
+        <a href="#contact" class="btn btn-primary header-cta">Me contacter <span>↗</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span></button>
       </div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#impact">Résultats</a><a href="#competences">Compétences</a><a href="#services">Services</a>
+      <a href="#projets">Projets</a><a href="#about">À propos</a><a href="#contact">Contact</a>
     </div>
   </header>
 
-  <!-- ============ OVERLAY MENU ============ -->
-  <nav class="overlay" id="overlay" aria-label="Navigation principale" aria-hidden="true">
-    <div class="overlay-bg"></div>
-    <div class="overlay-inner container">
-      <div class="overlay-head">
-        <span>NAVIGATION / 06</span>
-        <button class="overlay-close" id="overlayClose" aria-label="Fermer le menu">FERMER <span>×</span></button>
+  <!-- ============ RECHERCHE ============ -->
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true">
+    <div class="search-modal" role="dialog" aria-modal="true" aria-label="Recherche">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input type="text" id="searchInput" placeholder="Rechercher une section, une compétence, un projet…" autocomplete="off">
+        <kbd>ESC</kbd>
       </div>
-
-      <div class="overlay-body">
-        <ul class="overlay-list">
-          <li><a href="#realisations" data-preview="video"><span class="ol-num">01</span><span class="ol-text">Travaux</span><span class="ol-arrow">↗</span></a></li>
-          <li><a href="#expertise" data-preview="expertise"><span class="ol-num">02</span><span class="ol-text">Expertise</span><span class="ol-arrow">↗</span></a></li>
-          <li><a href="#facilitation" data-preview="facilitation"><span class="ol-num">03</span><span class="ol-text">Facilitation</span><span class="ol-arrow">↗</span></a></li>
-          <li><a href="#apropos" data-preview="about"><span class="ol-num">04</span><span class="ol-text">À propos</span><span class="ol-arrow">↗</span></a></li>
-          <li><a href="#temoignages" data-preview="quotes"><span class="ol-num">05</span><span class="ol-text">Témoignages</span><span class="ol-arrow">↗</span></a></li>
-          <li><a href="#contact" data-preview="contact"><span class="ol-num">06</span><span class="ol-text">Contact</span><span class="ol-arrow">↗</span></a></li>
-        </ul>
-
-        <div class="overlay-preview" id="overlayPreview" aria-hidden="true">
-          <img class="op-img is-active" data-key="video" src="assets/video.jpg" alt="Aperçu travaux">
-          <img class="op-img" data-key="expertise" src="assets/gear.jpg" alt="Aperçu expertise">
-          <img class="op-img" data-key="facilitation" src="assets/workshop.jpg" alt="Aperçu facilitation">
-          <img class="op-img" data-key="about" src="assets/hero.jpg" alt="Aperçu à propos">
-          <img class="op-img" data-key="quotes" src="assets/reportage.jpg" alt="Aperçu témoignages">
-          <img class="op-img" data-key="contact" src="assets/landscape.jpg" alt="Aperçu contact">
-          <span class="op-caption" id="opCaption">TRAVAUX</span>
-        </div>
-      </div>
-
-      <div class="overlay-foot">
-        <a href="mailto:aristidecedricbassole@gmail.com" class="of-link">aristidecedricbassole@gmail.com</a>
-        <div class="of-socials">
-          <a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a>
-          <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a>
-        </div>
+      <div class="search-results" id="searchResults">
+        <p class="search-hint">Suggestions</p>
+        <a href="#impact"><span>Résultats</span><small>Ce que je livre</small></a>
+        <a href="#competences"><span>Compétences</span><small>Photo, vidéo, facilitation</small></a>
+        <a href="#services"><span>Services</span><small>Comment je travaille</small></a>
+        <a href="#projets"><span>Projets</span><small>Réalisations sélectionnées</small></a>
+        <a href="#about"><span>À propos</span><small>Parcours et profil</small></a>
+        <a href="#contact"><span>Contact</span><small>Démarrer un projet</small></a>
       </div>
     </div>
-  </nav>
+  </div>
 
   <main id="main">
 
     <!-- ============ HERO ============ -->
-    <section class="hero" id="accueil" data-label="01 — ACCUEIL">
-      <div class="hero-image">
-        <img src="assets/hero.jpg" alt="Photographe au travail en lumière dorée — visuel de démonstration">
-      </div>
-      <div class="hero-veil"></div>
-
-      <div class="container hero-content">
-        <div class="hero-kicker"><span class="dot"></span> PHOTOGRAPHE · VIDÉASTE · FACILITATEUR DE JEUNES</div>
-        <h1 class="hero-title" data-split>Je crée des images<br>qui font <em>parler</em><br>de vous.</h1>
-        <p class="hero-lead">Images, films et récits qui restent. Indépendant, basé à Ouagadougou (Burkina Faso), ouvert aux projets partout ailleurs.</p>
-        <div class="hero-actions">
-          <a href="#realisations" class="btn btn-primary magnetic"><span>Voir les travaux</span><i>↘</i></a>
-          <a href="#contact" class="btn btn-ghost magnetic"><span>Démarrer un projet</span><i>↗</i></a>
-        </div>
-      </div>
-
-      <div class="container hero-foot">
-        <div class="hero-stats">
-          <div><strong data-count="4" data-pad="2">04</strong><span>expertises réunies</span></div>
-          <div><strong>2023</strong><span>avec AIESEC</span></div>
-          <div><strong>2024</strong><span>début en studio vidéo</span></div>
-        </div>
-        <a href="#realisations" class="scroll-cue" aria-label="Descendre"><span>SCROLL</span><i></i></a>
-      </div>
-    </section>
-
-    <!-- ============ MARQUEE ============ -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>PHOTOGRAPHIE</span><b>✳</b><span>VIDÉOGRAPHIE</span><b>✳</b><span>STORYTELLING</span><b>✳</b><span>FACILITATION</span><b>✳</b><span>REGARD</span><b>✳</b>
-        <span>PHOTOGRAPHIE</span><b>✳</b><span>VIDÉOGRAPHIE</span><b>✳</b><span>STORYTELLING</span><b>✳</b><span>FACILITATION</span><b>✳</b><span>REGARD</span><b>✳</b>
-      </div>
-    </div>
-
-    <!-- ============ TRAVAUX ============ -->
-    <section class="section work" id="realisations" data-label="02 — TRAVAUX">
-      <div class="container">
-        <div class="section-head reveal">
-          <div class="section-index">01 / TRAVAUX</div>
-          <h2 data-split>Des images qui <em>restent.</em></h2>
-          <p>Reportages, films, identité visuelle et accompagnement de jeunes. <span class="demo">Visuels de démonstration — à remplacer par vos créations.</span></p>
+    <section class="hero" id="accueil">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="status-bar">
+            <span class="status"><i></i> Disponible pour des projets</span>
+            <span class="dot-sep">·</span>
+            <span>Burkina Faso · remote · <span id="clock">--:--</span> GMT</span>
+          </div>
+          <p class="hero-eyebrow">ARISTIDE CÉDRIC BASSOLÉ — PHOTOGRAPHE · VIDÉASTE · FACILITATEUR</p>
+          <h1 class="hero-title">
+            Je crée des images<br>
+            <span class="hl-blue">qui racontent</span><br>
+            <span class="hl-underline">vos histoires</span><br>
+            et qui restent<span class="period">.</span>
+          </h1>
+          <p class="hero-lead">J'aide entreprises, ONG et institutions à transformer leurs idées en films, reportages et récits visuels qui font parler d'elles — du concept au montage final. Un seul interlocuteur, de l'image à l'impact.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Discuter de votre projet <span>↗</span></a>
+            <a href="#impact" class="btn btn-outline">Voir les résultats <span>↓</span></a>
+          </div>
         </div>
 
-        <div class="filters reveal" role="group" aria-label="Filtrer les travaux">
-          <button class="filter is-active" data-filter="all">Tout <sup>04</sup></button>
-          <button class="filter" data-filter="video">Vidéo <sup>01</sup></button>
-          <button class="filter" data-filter="photo">Photo <sup>02</sup></button>
-          <button class="filter" data-filter="facilitation">Facilitation <sup>01</sup></button>
-        </div>
-
-        <div class="gallery" id="gallery">
-          <figure class="work-card card-large" data-cat="video">
-            <div class="card-media"><img src="assets/video.jpg" alt="Couverture d'événement — visuel de démonstration" loading="lazy"></div>
-            <figcaption><span class="card-num">01</span><div><span class="card-cat">Vidéo · Événement</span><h3>Films &amp; couvertures</h3></div><span class="card-arrow">↗</span></figcaption>
-          </figure>
-          <figure class="work-card" data-cat="photo">
-            <div class="card-media"><img src="assets/reportage.jpg" alt="Reportage événementiel — visuel de démonstration" loading="lazy"></div>
-            <figcaption><span class="card-num">02</span><div><span class="card-cat">Photographie</span><h3>Reportages</h3></div><span class="card-arrow">↗</span></figcaption>
-          </figure>
-          <figure class="work-card" data-cat="photo">
-            <div class="card-media"><img src="assets/gear.jpg" alt="Savoir-faire photographique — visuel de démonstration" loading="lazy"></div>
-            <figcaption><span class="card-num">03</span><div><span class="card-cat">Identité visuelle</span><h3>Images de marque</h3></div><span class="card-arrow">↗</span></figcaption>
-          </figure>
-          <figure class="work-card card-large" data-cat="facilitation">
-            <div class="card-media"><img src="assets/workshop.jpg" alt="Atelier de formation — visuel de démonstration" loading="lazy"></div>
-            <figcaption><span class="card-num">04</span><div><span class="card-cat">Facilitation · AIESEC</span><h3>Former &amp; transmettre</h3></div><span class="card-arrow">↗</span></figcaption>
-          </figure>
+        <div class="hero-visual">
+          <div class="portrait-card">
+            <img src="assets/hero.jpg" alt="Photographe au travail — visuel de démonstration">
+            <div class="portrait-caption"><strong>Aristide Cédric Bassolé</strong><span>PHOTOGRAPHE · VIDÉASTE · FACILITATEUR</span></div>
+          </div>
+          <div class="float-badge badge-top">
+            <span class="fb-icon green">★</span>
+            <span><strong>Engagé jeunesse</strong><small>Facilitateur AIESEC</small></span>
+          </div>
+          <div class="float-badge badge-left">
+            <span class="fb-icon purple">▦</span>
+            <span><strong>04</strong><small>expertises réunies</small></span>
+          </div>
+          <div class="float-badge badge-right">
+            <span class="fb-icon blue">◎</span>
+            <span><strong>100%</strong><small>du concept à la livraison</small></span>
+          </div>
+          <div class="round-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <defs><path id="circlePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"></path></defs>
+              <text><textPath href="#circlePath">PHOTOGRAPHIE · VIDÉO · FACILITATION · REGARD · </textPath></text>
+            </svg>
+            <span class="round-arrow">↗</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ EXPERTISE ============ -->
-    <section class="section expertise" id="expertise" data-label="03 — EXPERTISE">
+    <!-- ============ RÉSULTATS ============ -->
+    <section class="section" id="impact">
       <div class="container">
-        <div class="section-head compact reveal">
-          <div class="section-index">02 / EXPERTISE</div>
-          <h2 data-split>Mes <em>expertises</em>.</h2>
-        </div>
-        <div class="accordion" id="accordion">
-          <div class="acc-item is-open">
-            <button class="acc-trigger" aria-expanded="true"><span class="acc-num">01</span><span class="acc-title">Photographie professionnelle</span><span class="acc-icon">+</span></button>
-            <div class="acc-panel"><div class="acc-inner"><p>Portraits, reportages, couvertures d'événements et visuels de marque. Des images nettes, pensées pour votre usage réel.</p><div class="acc-tags"><span>Reportage</span><span>Portrait</span><span>Événement</span></div></div></div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">02</span><span class="acc-title">Vidéographie &amp; production</span><span class="acc-icon">+</span></button>
-            <div class="acc-panel"><div class="acc-inner"><p>Tournage, réalisation et montage : films, contenus pour réseaux sociaux, interviews et formats digitaux. Du concept à la livraison.</p><div class="acc-tags"><span>Tournage</span><span>Montage</span><span>Étalonnage</span></div></div></div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">03</span><span class="acc-title">Storytelling de marque</span><span class="acc-icon">+</span></button>
-            <div class="acc-panel"><div class="acc-inner"><p>Donner une voix et un visage à votre organisation. Construire un récit visuel qui crée de la confiance et reste en mémoire.</p><div class="acc-tags"><span>Brand content</span><span>Identité</span><span>Récit visuel</span></div></div></div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-trigger" aria-expanded="false"><span class="acc-num">04</span><span class="acc-title">Facilitation &amp; leadership des jeunes</span><span class="acc-icon">+</span></button>
-            <div class="acc-panel"><div class="acc-inner"><p>Animer des sessions de soft skills, fédérer des équipes multiculturelles et transmettre des compétences concrètes. Une pratique développée chez AIESEC in Burkina Faso.</p><div class="acc-tags"><span>Leadership</span><span>Soft skills</span><span>AIESEC</span></div></div></div>
-          </div>
+        <div class="section-head">
+          <span class="section-num">01</span><span class="section-label">RÉSULTATS</span>
+          <h2>Des livrables concrets, <span class="hl-underline">pas des promesses</span></h2>
+          <p>Ce que je mets sur la table : une approche complète, du cadre à la diffusion.</p>
         </div>
 
-        <div class="method reveal">
-          <div class="method-head"><span class="section-index">MÉTHODE</span><h3>Trois temps, une image juste.</h3></div>
+        <div class="result-grid">
+          <article class="result-card card-blue">
+            <div class="rc-top"><span class="rc-icon">◎</span><span class="rc-tag">Production</span></div>
+            <strong class="rc-number">100<span>%</span></strong>
+            <p class="rc-title">Du concept au montage final</p>
+            <p class="rc-desc">Tournage, réalisation, étalonnage et livraison dans les formats adaptés à chaque canal.</p>
+            <a href="#projets" class="rc-link">Voir le détail →</a>
+          </article>
+          <article class="result-card card-green">
+            <div class="rc-top"><span class="rc-icon">★</span><span class="rc-tag">Engagement</span></div>
+            <strong class="rc-number">2023</strong>
+            <p class="rc-title">Au service des jeunes</p>
+            <p class="rc-desc">Facilitation, leadership et ateliers de soft skills avec AIESEC in Burkina Faso.</p>
+            <a href="#facilitation" class="rc-link">Voir le détail →</a>
+          </article>
+          <article class="result-card card-purple">
+            <div class="rc-top"><span class="rc-icon">▦</span><span class="rc-tag">Polyvalence</span></div>
+            <strong class="rc-number">04</strong>
+            <p class="rc-title">Expertises complémentaires</p>
+            <p class="rc-desc">Photo, vidéo, storytelling et facilitation — un seul interlocuteur pour tout.</p>
+            <a href="#competences" class="rc-link">Voir le détail →</a>
+          </article>
+        </div>
+
+        <div class="mini-stats">
+          <div><strong>9+</strong><span>ans d'expérience autodidacte</span></div>
+          <div><strong>3</strong><span>canaux : web, réseaux, terrain</span></div>
+          <div><strong>24h</strong><span>réponse garantie</span></div>
+          <div><strong>100+</strong><span>pays via AIESEC</span></div>
+        </div>
+
+        <div class="stack-line"><span>Stack du quotidien</span></div>
+        <div class="stack-tags">
+          <span>Photographie</span><span>Vidéographie</span><span>Montage</span><span>Étalonnage</span>
+          <span>Storytelling</span><span>Brand content</span><span>Facilitation</span><span>Leadership</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section section-alt" id="competences">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">02</span><span class="section-label">COMPÉTENCES</span>
+          <h2>Des compétences <span class="hl-blue">prouvées par le terrain</span></h2>
+          <p>Quatre domaines, une même exigence : produire un travail utile et maîtrisé.</p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill-card">
+            <div class="skill-head"><span class="skill-icon blue">◎</span><div><h3>Photographie</h3><p>Capturer l'instant juste</p></div></div>
+            <div class="skill-tags"><span>Reportage</span><span>Portrait</span><span>Événement</span><span>Étalonnage</span></div>
+            <div class="skill-proof"><img src="assets/reportage.jpg" alt="Reportage"><img src="assets/gear.jpg" alt="Matériel"><span>+6</span></div>
+            <p class="skill-count">Prouvé par 10 projets</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-head"><span class="skill-icon green">▶</span><div><h3>Vidéographie</h3><p>Du tournage au montage</p></div></div>
+            <div class="skill-tags"><span>Tournage</span><span>Réalisation</span><span>Montage</span><span>Films</span></div>
+            <div class="skill-proof"><img src="assets/video.jpg" alt="Vidéo"><img src="assets/workshop.jpg" alt="Atelier"><span>+4</span></div>
+            <p class="skill-count">Prouvé par 8 projets</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-head"><span class="skill-icon purple">✦</span><div><h3>Storytelling</h3><p>Donner du sens à l'image</p></div></div>
+            <div class="skill-tags"><span>Brand content</span><span>Identité</span><span>Récit visuel</span></div>
+            <div class="skill-proof"><img src="assets/gear.jpg" alt="Identité"><img src="assets/landscape.jpg" alt="Récit"><span>+3</span></div>
+            <p class="skill-count">Prouvé par 5 projets</p>
+          </article>
+
+          <article class="skill-card">
+            <div class="skill-head"><span class="skill-icon orange">★</span><div><h3>Facilitation</h3><p>Transmettre et fédérer</p></div></div>
+            <div class="skill-tags"><span>Leadership</span><span>Soft skills</span><span>AIESEC</span></div>
+            <div class="skill-proof"><img src="assets/workshop.jpg" alt="Atelier"><img src="assets/reportage.jpg" alt="Groupe"><span>+2</span></div>
+            <p class="skill-count">Prouvé par 6 ateliers</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">03</span><span class="section-label">SERVICES</span>
+          <h2>Ce que je peux <span class="hl-underline">créer avec vous</span></h2>
+          <p>De l'image à la transmission, un accompagnement complet sans multiplier les intermédiaires.</p>
+          <a href="#contact" class="inline-link">Discuter de votre besoin →</a>
+        </div>
+
+        <div class="service-list">
+          <article class="service-row reveal">
+            <span class="sr-num">01 — Production</span>
+            <div><h3>Films &amp; vidéos qui parlent</h3><p>Films commerciaux, reportages et contenus pour réseaux sociaux, pensés pour votre audience et votre canal de diffusion.</p>
+              <p class="sr-change"><strong>Ce que ça change :</strong> vous obtenez un contenu clair, cohérent et prêt à être diffusé, sans repartir de zéro.</p>
+              <div class="sr-tags"><span>Tournage</span><span>Montage</span><span>Étalonnage</span></div>
+            </div>
+          </article>
+          <article class="service-row reveal">
+            <span class="sr-num">02 — Photo</span>
+            <div><h3>Reportages &amp; images de marque</h3><p>Portraits, couvertures d'événements et visuels d'identité qui donnent un visage à votre organisation.</p>
+              <p class="sr-change"><strong>Ce que ça change :</strong> vous disposez d'une banque d'images cohérente qui renforce votre présence et votre crédibilité.</p>
+              <div class="sr-tags"><span>Reportage</span><span>Portrait</span><span>Brand content</span></div>
+            </div>
+          </article>
+          <article class="service-row reveal">
+            <span class="sr-num">03 — Récit</span>
+            <div><h3>Storytelling visuel</h3><p>Construire un récit qui crée de la confiance : donner une voix et un visage à votre projet, votre marque ou votre cause.</p>
+              <p class="sr-change"><strong>Ce que ça change :</strong> votre message devient mémorable et vos publics s'identifient à ce que vous portez.</p>
+              <div class="sr-tags"><span>Identité</span><span>Récit</span><span>Campagne</span></div>
+            </div>
+          </article>
+          <article class="service-row reveal">
+            <span class="sr-num">04 — Transmission</span>
+            <div><h3>Ateliers &amp; facilitation de jeunes</h3><p>Formations en leadership et soft skills, animation de groupes et accompagnement d'équipes multiculturelles.</p>
+              <p class="sr-change"><strong>Ce que ça change :</strong> vous renforcez l'autonomie et la confiance de vos jeunes, avec des acquis qui durent au-delà de l'atelier.</p>
+              <div class="sr-tags"><span>Leadership</span><span>Soft skills</span><span>Ateliers</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="method" id="facilitation">
+          <div class="method-head"><span class="section-num">MÉTHODE</span><h3>Un cadre simple, des livrables visibles vite</h3></div>
           <div class="method-steps">
-            <div><span>01</span><strong>Cadrer</strong><p>Comprendre votre objectif, votre audience et le contexte avant de sortir l'appareil.</p></div>
-            <div><span>02</span><strong>Créer</strong><p>Tournage ou prise de vue, direction et captures, avec un œil sur l'usage final.</p></div>
-            <div><span>03</span><strong>Livrer</strong><p>Montage, étalonnage et formats adaptés à chaque canal : un travail prêt à servir.</p></div>
+            <div class="mstep"><span>01</span><h4>Cadrage</h4><p>On clarifie le besoin, l'audience et l'objectif avant de sortir l'appareil.</p><small>Périmètre &amp; priorités</small></div>
+            <div class="mstep"><span>02</span><h4>Création</h4><p>Tournage ou prise de vue, avec un œil sur l'usage final dès la première image.</p><small>Production</small></div>
+            <div class="mstep"><span>03</span><h4>Livraison</h4><p>Montage, étalonnage et formats adaptés : un travail prêt à servir.</p><small>Fichiers finaux</small></div>
+            <div class="mstep"><span>04</span><h4>Ajustement</h4><p>Retours et itérations pour affiner ce qui fait vraiment la différence.</p><small>Bilan &amp; suite</small></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FACILITATION ============ -->
-    <section class="facilitation" id="facilitation" data-label="04 — FACILITATION">
-      <div class="fac-media"><img src="assets/workshop.jpg" alt="Atelier avec un groupe — visuel de démonstration" loading="lazy"></div>
-      <div class="fac-content">
-        <div class="section-index">03 / FACILITATION</div>
-        <h2 data-split>Former la relève, <em>une image à la fois.</em></h2>
-        <p class="fac-lead">Animer un groupe, c'est créer les conditions pour que chacun ose prendre la parole et agir.</p>
-        <p>Chez AIESEC in Burkina Faso, j'accompagne des équipes multiculturelles et je conçois des ateliers de leadership et de développement personnel qui se prolongent bien après la séance.</p>
-        <p>Cette dimension de facilitateur nourrit mon travail de créateur d'images : elle me rappelle qu'une image ne prend tout son sens que lorsqu'elle est comprise, partagée et réutilisée.</p>
-        <a href="#contact" class="text-link magnetic">Proposer un atelier <span>→</span></a>
+    <!-- ============ PROJETS ============ -->
+    <section class="section section-alt" id="projets">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">04</span><span class="section-label">PROJETS</span>
+          <h2>Des projets concrets, <span class="hl-blue">des images qui comptent</span></h2>
+          <p>Une sélection de ce que je produis au quotidien. <span class="demo">Visuels de démonstration — à remplacer par vos créations.</span></p>
+        </div>
+
+        <div class="project-filters" role="group" aria-label="Filtrer les projets">
+          <button class="pf is-active" data-filter="all">Tous <sup>04</sup></button>
+          <button class="pf" data-filter="video">Vidéo <sup>01</sup></button>
+          <button class="pf" data-filter="photo">Photo <sup>02</sup></button>
+          <button class="pf" data-filter="facilitation">Facilitation <sup>01</sup></button>
+        </div>
+
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card" data-cat="video">
+            <div class="pc-media"><img src="assets/video.jpg" alt="Couverture d'événement — visuel de démonstration" loading="lazy"><span class="pc-status">Projet type</span></div>
+            <div class="pc-body">
+              <div class="pc-tags"><span>Vidéo</span><span>Événement</span></div>
+              <h3>Films &amp; couvertures d'événements</h3>
+              <p>Capturer l'énergie d'un moment et la restituer en un film qui donne envie d'y être.</p>
+              <div class="pc-stats"><span><strong>100%</strong> du concept à la livraison</span></div>
+              <a href="#contact" class="pc-link">Parlons d'un projet similaire →</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="photo">
+            <div class="pc-media"><img src="assets/reportage.jpg" alt="Reportage événementiel — visuel de démonstration" loading="lazy"><span class="pc-status">Projet type</span></div>
+            <div class="pc-body">
+              <div class="pc-tags"><span>Photo</span><span>Reportage</span></div>
+              <h3>Reportages &amp; couvertures</h3>
+              <p>Des images qui racontent le terrain, les visages et les moments qui comptent.</p>
+              <div class="pc-stats"><span><strong>3</strong> formats livrés</span></div>
+              <a href="#contact" class="pc-link">Parlons d'un projet similaire →</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="photo">
+            <div class="pc-media"><img src="assets/gear.jpg" alt="Identité visuelle — visuel de démonstration" loading="lazy"><span class="pc-status">Projet type</span></div>
+            <div class="pc-body">
+              <div class="pc-tags"><span>Photo</span><span>Brand content</span></div>
+              <h3>Images de marque</h3>
+              <p>Une banque d'images cohérente qui donne un visage et une voix à votre organisation.</p>
+              <div class="pc-stats"><span><strong>1</strong> ligne éditoriale</span></div>
+              <a href="#contact" class="pc-link">Parlons d'un projet similaire →</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-cat="facilitation">
+            <div class="pc-media"><img src="assets/workshop.jpg" alt="Atelier de formation — visuel de démonstration" loading="lazy"><span class="pc-status">Projet type</span></div>
+            <div class="pc-body">
+              <div class="pc-tags"><span>Facilitation</span><span>AIESEC</span></div>
+              <h3>Ateliers leadership &amp; soft skills</h3>
+              <p>Animer des groupes de jeunes et transmettre des compétences qui durent au-delà de la séance.</p>
+              <div class="pc-stats"><span><strong>100+</strong> pays via AIESEC</span></div>
+              <a href="#contact" class="pc-link">Parlons d'un atelier →</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="project-cta">
+          <div><h3>Un projet en tête ?</h3><p>Décrivez-le en quelques lignes : je vous réponds sous 24h avec un avis concret.</p></div>
+          <a href="#contact" class="btn btn-primary">Discuter de votre projet <span>↗</span></a>
+        </div>
       </div>
     </section>
 
     <!-- ============ À PROPOS ============ -->
-    <section class="section about" id="apropos" data-label="05 — À PROPOS">
-      <div class="container about-grid">
-        <div class="about-text reveal">
-          <div class="section-index">04 / À PROPOS</div>
-          <h2 data-split>Photographe, vidéaste <em>et passeur.</em></h2>
-          <p class="about-lead">Je suis Aristide Cédric Bassolé. Je produis des films, des reportages et des visuels pour les entreprises, ONG et institutions — du concept au montage final.</p>
-          <p>Mon parcours commence à Koudougou, avec des études en sciences de la vie et de la terre à l'Université Norbert Zongo. Je découvre ensuite l'image, d'abord en autodidacte, puis sur le terrain au Studio TOPCART226 où je passe de stagiaire à vidéaste.</p>
-          <p>Aujourd'hui à mon compte, je poursuis cette double voie : créer des images qui servent un propos, et transmettre aux jeunes les clés pour en créer à leur tour.</p>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">05</span><span class="section-label">À PROPOS</span>
+          <h2>Un profil <span class="hl-blue">hybride : image, terrain et transmission</span></h2>
         </div>
-        <div class="about-timeline reveal">
-          <div class="tl" id="timeline">
-            <article class="tl-item is-current"><div class="tl-dot"></div><div class="tl-meta">AUJOURD'HUI</div><h3>À mon compte</h3><p>Photographe &amp; vidéaste indépendant — Ouagadougou, Burkina Faso</p></article>
-            <article class="tl-item"><div class="tl-dot"></div><div class="tl-meta">2024 — 2026</div><h3>Studio TOPCART226</h3><p>Stagiaire → Assistant vidéaste → Vidéaste — Koudougou</p></article>
-            <article class="tl-item"><div class="tl-dot"></div><div class="tl-meta">DEPUIS 2023</div><h3>AIESEC in Burkina Faso</h3><p>Leader d'équipes &amp; facilitateur de jeunes</p></article>
-            <article class="tl-item"><div class="tl-dot"></div><div class="tl-meta">FORMATION</div><h3>Université Norbert Zongo</h3><p>Études en sciences de la vie et de la terre — Koudougou</p></article>
+
+        <div class="about-grid">
+          <div class="about-photo">
+            <img src="assets/hero.jpg" alt="Portrait — visuel de démonstration">
+            <span class="ap-badge">AC<span>.</span></span>
+          </div>
+          <div class="about-info">
+            <h3>Aristide Cédric Bassolé</h3>
+            <p class="about-role">Photographe &amp; vidéaste indépendant</p>
+            <div class="about-facts">
+              <div><span>Base</span><strong>Ouagadougou, Burkina Faso</strong></div>
+              <div><span>Formation</span><strong>Université Norbert Zongo, Koudougou</strong></div>
+              <div><span>Heure locale</span><strong><span id="clock2">--:--</span> GMT</strong></div>
+              <div><span>Collaboration</span><strong>Freelance &amp; missions</strong></div>
+              <div><span>Réponse</span><strong>24h</strong></div>
+            </div>
+            <div class="about-socials">
+              <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a>
+              <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a>
+              <a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>Je combine un regard d'image, une exigence de terrain et une vraie envie de transmettre pour transformer une idée en contenu utile, sans perdre de temps dans le flou.</p>
+            <p>J'interviens sur la photographie, la vidéographie et le récit visuel pour entreprises, ONG et institutions. Ma double casquette de facilitateur chez AIESEC me permet aussi d'animer des ateliers de leadership et de développement personnel pour les jeunes. Basé au Burkina Faso, je collabore sur des projets locaux et internationaux.</p>
+            <div class="about-values">
+              <div><span>01</span><div><h4>Prioriser l'essentiel</h4><p>Chercher ce qui doit exister pour créer de la valeur, pas ce qui impressionne en premier.</p></div></div>
+              <div><span>02</span><div><h4>Livrer vite, proprement</h4><p>Aller vite avec une base lisible et solide, pensée pour évoluer.</p></div></div>
+              <div><span>03</span><div><h4>Relier l'image au résultat</h4><p>Garder un lien direct entre ce qu'on crée, ce qu'on mesure et ce que ça change.</p></div></div>
+            </div>
+            <div class="distinction"><span>★</span><div><strong>Facilitateur &amp; leader jeunesse</strong><p>Engagé chez AIESEC in Burkina Faso, présent dans plus de 100 pays.</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============ TÉMOIGNAGES ============ -->
-    <section class="section quotes" id="temoignages" data-label="06 — TÉMOIGNAGES">
+    <section class="section section-alt" id="temoignages">
       <div class="container">
-        <div class="section-head compact reveal">
-          <div class="section-index">05 / TÉMOIGNAGES</div>
-          <h2 data-split>Ce qu'on <em>retient.</em></h2>
+        <div class="section-head">
+          <span class="section-num">06</span><span class="section-label">TÉMOIGNAGES</span>
+          <h2>Ce que disent <span class="hl-underline">ceux avec qui j'ai travaillé</span></h2>
           <p class="demo">Espaces prêts à recevoir vos vrais retours clients — remplacez le texte et le nom des trois cartes.</p>
         </div>
-
-        <div class="quotes-slider" id="quotesSlider">
-          <div class="quotes-track" id="quotesTrack">
-            <article class="quote-card">
-              <span class="quote-mark">“</span>
-              <p>À compléter — décrivez en une phrase le résultat que ce client a obtenu grâce à votre travail.</p>
-              <div class="quote-author"><span class="qa-avatar">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></div>
-            </article>
-            <article class="quote-card">
-              <span class="quote-mark">“</span>
-              <p>À compléter — un retour sur votre manière de travailler, votre regard ou votre fiabilité.</p>
-              <div class="quote-author"><span class="qa-avatar">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></div>
-            </article>
-            <article class="quote-card">
-              <span class="quote-mark">“</span>
-              <p>À compléter — ce qui a fait la différence sur le projet (délai, qualité, impact).</p>
-              <div class="quote-author"><span class="qa-avatar">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></div>
-            </article>
-          </div>
-          <div class="quotes-controls">
-            <button class="q-prev" aria-label="Témoignage précédent">←</button>
-            <span class="q-count"><b id="qCurrent">01</b> / 03</span>
-            <button class="q-next" aria-label="Témoignage suivant">→</button>
-          </div>
+        <div class="quotes-grid">
+          <blockquote class="quote-card"><span class="q-mark">“</span><p>À compléter — décrivez en une phrase le résultat que ce client a obtenu grâce à votre travail.</p><footer><span class="q-av">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></footer></blockquote>
+          <blockquote class="quote-card"><span class="q-mark">“</span><p>À compléter — un retour sur votre manière de travailler, votre regard ou votre fiabilité.</p><footer><span class="q-av">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></footer></blockquote>
+          <blockquote class="quote-card"><span class="q-mark">“</span><p>À compléter — ce qui a fait la différence sur le projet (délai, qualité, impact).</p><footer><span class="q-av">?</span><div><strong>Nom du client</strong><span>Fonction · Organisation</span></div></footer></blockquote>
         </div>
       </div>
     </section>
 
     <!-- ============ CONTACT ============ -->
-    <section class="contact" id="contact" data-label="07 — CONTACT">
-      <div class="contact-glow" aria-hidden="true"></div>
-      <div class="container contact-inner">
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-num">07</span><span class="section-label">CONTACT</span>
+          <h2>Parlons de votre <span class="hl-blue">prochain projet</span></h2>
+          <p>Décrivez vos besoins et je reviens vers vous sous 24h avec une proposition claire.</p>
+        </div>
+
         <div class="contact-grid">
-          <div class="contact-copy">
-            <div class="section-index">06 / CONTACT</div>
-            <h2 data-split>Parlons de <em>votre projet.</em></h2>
-            <p class="contact-lead">Un film, un reportage ou un atelier pour vos jeunes ? Dites-moi ce que vous avez en tête — je m'en occupe.</p>
-            <a class="email-link magnetic" href="mailto:aristidecedricbassole@gmail.com"><span>aristidecedricbassole@gmail.com</span><i>↗</i></a>
-            <div class="contact-bottom">
-              <div class="contact-socials">
-                <a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a>
-                <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a>
-                <a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a>
-                <a href="https://www.facebook.com/aristidecedric.bassole.7/" target="_blank" rel="noopener">Facebook ↗</a>
-              </div>
-              <p class="contact-place">Ouagadougou, Burkina Faso<br>Disponible pour projets internationaux</p>
-            </div>
+          <div class="contact-channels">
+            <a href="https://wa.me/22656162255" target="_blank" rel="noopener" class="channel"><span class="ch-icon green">✆</span><span><small>Le plus rapide</small><strong>WhatsApp</strong><em>+226 56 16 22 55</em></span><span class="ch-arrow">↗</span></a>
+            <a href="mailto:aristidecedricbassole@gmail.com" class="channel"><span class="ch-icon blue">✉</span><span><small>Email</small><strong>E-mail</strong><em>aristidecedricbassole@gmail.com</em></span><span class="ch-arrow">↗</span></a>
+            <a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener" class="channel"><span class="ch-icon navy">in</span><span><small>Réseau pro</small><strong>LinkedIn</strong><em>/in/aristide-cedric-bassole</em></span><span class="ch-arrow">↗</span></a>
+            <div class="availability"><span class="av-dot"></span><div><strong>Disponibilités limitées — réponse garantie sous 24h.</strong><small>Heure locale : <span id="clock3">--:--</span> GMT</small></div></div>
           </div>
 
-          <form class="contact-form reveal" id="contactForm">
-            <h3>Écrivez-moi</h3>
-            <div class="field"><label for="cf-name">Votre nom</label><input type="text" id="cf-name" name="name" required placeholder="Votre nom"></div>
-            <div class="field"><label for="cf-email">Votre e-mail</label><input type="email" id="cf-email" name="email" required placeholder="vous@exemple.com"></div>
-            <div class="field">
-              <label for="cf-subject">Objet</label>
-              <select id="cf-subject" name="subject">
-                <option>Production vidéo</option><option>Reportage photo</option><option>Identité visuelle</option><option>Atelier / facilitation</option><option>Autre demande</option>
-              </select>
+          <form class="contact-form" id="contactForm">
+            <div class="field"><label>Type de projet (optionnel)</label>
+              <select id="cf-type"><option>Production vidéo</option><option>Reportage photo</option><option>Identité visuelle</option><option>Atelier / facilitation</option><option>Autre</option></select>
             </div>
-            <div class="field"><label for="cf-message">Votre message</label><textarea id="cf-message" name="message" rows="4" required placeholder="Parlez-moi de votre projet…"></textarea></div>
-            <button type="submit" class="btn btn-primary magnetic"><span>Envoyer le message</span><i>↗</i></button>
-            <p class="form-note">S'ouvre dans votre messagerie, prêt à être envoyé.</p>
+            <div class="field"><label for="cf-name">Nom complet</label><input id="cf-name" type="text" required placeholder="Votre nom"></div>
+            <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" required placeholder="vous@exemple.com"></div>
+            <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" rows="4" required placeholder="Décrivez votre projet…"></textarea></div>
+            <button type="submit" class="btn btn-primary form-submit">Recevoir une proposition <span>↗</span></button>
+            <p class="form-note">Premier échange sans engagement. Réponse sous 24h.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ============ PIED ============ -->
   <footer class="footer">
-    <div class="container footer-top">
-      <p>© <span id="year">2026</span> Aristide Cédric Bassolé</p>
-      <a href="#accueil">Retour en haut ↑</a>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#accueil" class="brand"><span class="brand-icon">AC<span>.</span></span><span class="brand-name">Aristide Cédric Bassolé</span></a>
+        <p>Images, films et récits qui livrent des résultats concrets.</p>
+        <small>Burkina Faso · <span id="clock4">--:--</span> GMT</small>
+      </div>
+      <div class="footer-col"><h4>Navigation</h4><a href="#impact">Résultats</a><a href="#competences">Compétences</a><a href="#services">Services</a><a href="#projets">Projets</a><a href="#about">À propos</a><a href="#contact">Contact</a></div>
+      <div class="footer-col"><h4>Ailleurs</h4><a href="https://www.linkedin.com/in/aristide-c%C3%A9dric-bassol%C3%A9-3a6111265" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.instagram.com/aristide_cedric_/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://wa.me/22656162255" target="_blank" rel="noopener">WhatsApp ↗</a><a href="mailto:aristidecedricbassole@gmail.com">E-mail ↗</a></div>
+      <div class="footer-col"><h4>Astuce</h4><p>Appuyez sur <kbd>⌘ K</kbd> ou <kbd>/</kbd> pour tout explorer.</p></div>
     </div>
-    <div class="footer-word" aria-hidden="true">AC<span>.</span></div>
+    <div class="container footer-bottom"><p>© <span id="year">2026</span> Aristide Cédric Bassolé. Tous droits réservés.</p><a href="#accueil">Haut de page ↑</a></div>
   </footer>
 
   <script src="script.js"></script>
