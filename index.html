@@ -14,7 +14,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="Aristide Cédric Bassolé — Photographe · Vidéaste · Facilitateur">
   <meta property="og:description" content="Images, films et récits qui livrent des résultats concrets. Indépendant à Ouagadougou.">
-  <meta property="og:image" content="https://aristidecedricbassole-cyber.github.io/assets/hero.jpg">
+  <meta property="og:image" content="https://aristidecedricbassole-cyber.github.io/assets/portrait.png">
   <meta property="og:url" content="https://aristidecedricbassole-cyber.github.io/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://aristidecedricbassole-cyber.github.io/">
@@ -42,8 +42,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="is-loading">
   <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-brand">AC<span>.</span></span>
+      <div class="loader-count"><span id="loaderNum">00</span><i>%</i></div>
+      <div class="loader-bar"><span id="loaderBar"></span></div>
+      <p>Préparation de l'expérience</p>
+    </div>
+  </div>
+
+  <!-- ============ CURSEUR ============ -->
+  <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+  <!-- ============ PROGRESSION ============ -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
   <!-- ============ EN-TÊTE ============ -->
   <header class="header" id="top">
@@ -112,7 +128,7 @@
             <span>Burkina Faso · remote · <span id="clock">--:--</span> GMT</span>
           </div>
           <p class="hero-eyebrow">ARISTIDE CÉDRIC BASSOLÉ — PHOTOGRAPHE · VIDÉASTE · FACILITATEUR</p>
-          <h1 class="hero-title">
+          <h1 class="hero-title" data-split>
             Je crée des images<br>
             <span class="hl-blue">qui racontent</span><br>
             <span class="hl-underline">vos histoires</span><br>
@@ -126,8 +142,8 @@
         </div>
 
         <div class="hero-visual">
-          <div class="portrait-card">
-            <img src="assets/hero.jpg" alt="Photographe au travail — visuel de démonstration">
+          <div class="portrait-card" data-parallax>
+            <img src="assets/portrait.png" alt="Portrait d'Aristide Cédric Bassolé">
             <div class="portrait-caption"><strong>Aristide Cédric Bassolé</strong><span>PHOTOGRAPHE · VIDÉASTE · FACILITATEUR</span></div>
           </div>
           <div class="float-badge badge-top">
@@ -158,7 +174,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">01</span><span class="section-label">RÉSULTATS</span>
-          <h2>Des livrables concrets, <span class="hl-underline">pas des promesses</span></h2>
+          <h2 data-split>Des livrables concrets, <span class="hl-underline">pas des promesses</span></h2>
           <p>Ce que je mets sur la table : une approche complète, du cadre à la diffusion.</p>
         </div>
 
@@ -206,7 +222,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">02</span><span class="section-label">COMPÉTENCES</span>
-          <h2>Des compétences <span class="hl-blue">prouvées par le terrain</span></h2>
+          <h2 data-split>Des compétences <span class="hl-blue">prouvées par le terrain</span></h2>
           <p>Quatre domaines, une même exigence : produire un travail utile et maîtrisé.</p>
         </div>
 
@@ -247,7 +263,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">03</span><span class="section-label">SERVICES</span>
-          <h2>Ce que je peux <span class="hl-underline">créer avec vous</span></h2>
+          <h2 data-split>Ce que je peux <span class="hl-underline">créer avec vous</span></h2>
           <p>De l'image à la transmission, un accompagnement complet sans multiplier les intermédiaires.</p>
           <a href="#contact" class="inline-link">Discuter de votre besoin →</a>
         </div>
@@ -300,7 +316,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">04</span><span class="section-label">PROJETS</span>
-          <h2>Des projets concrets, <span class="hl-blue">des images qui comptent</span></h2>
+          <h2 data-split>Des projets concrets, <span class="hl-blue">des images qui comptent</span></h2>
           <p>Une sélection de ce que je produis au quotidien. <span class="demo">Visuels de démonstration — à remplacer par vos créations.</span></p>
         </div>
 
@@ -369,12 +385,12 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">05</span><span class="section-label">À PROPOS</span>
-          <h2>Un profil <span class="hl-blue">hybride : image, terrain et transmission</span></h2>
+          <h2 data-split>Un profil <span class="hl-blue">hybride : image, terrain et transmission</span></h2>
         </div>
 
         <div class="about-grid">
           <div class="about-photo">
-            <img src="assets/hero.jpg" alt="Portrait — visuel de démonstration">
+            <img src="assets/portrait.png" alt="Portrait d'Aristide Cédric Bassolé">
             <span class="ap-badge">AC<span>.</span></span>
           </div>
           <div class="about-info">
@@ -412,7 +428,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">06</span><span class="section-label">TÉMOIGNAGES</span>
-          <h2>Ce que disent <span class="hl-underline">ceux avec qui j'ai travaillé</span></h2>
+          <h2 data-split>Ce que disent <span class="hl-underline">ceux avec qui j'ai travaillé</span></h2>
           <p class="demo">Espaces prêts à recevoir vos vrais retours clients — remplacez le texte et le nom des trois cartes.</p>
         </div>
         <div class="quotes-grid">
@@ -428,7 +444,7 @@
       <div class="container">
         <div class="section-head">
           <span class="section-num">07</span><span class="section-label">CONTACT</span>
-          <h2>Parlons de votre <span class="hl-blue">prochain projet</span></h2>
+          <h2 data-split>Parlons de votre <span class="hl-blue">prochain projet</span></h2>
           <p>Décrivez vos besoins et je reviens vers vous sous 24h avec une proposition claire.</p>
         </div>
 

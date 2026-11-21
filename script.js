@@ -1,37 +1,98 @@
 /* =========================================================
    Portfolio — Aristide Cédric Bassolé
-   Style ibrahimdayende.me : recherche, thème, horloge, filtres, reveals
+   Motion design professionnel + interactions
    ========================================================= */
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
 
-/* ---------------- THEME ---------------- */
+/* ====================== LOADER ====================== */
+const loader = document.getElementById('loader');
+const loaderNum = document.getElementById('loaderNum');
+const loaderBar = document.getElementById('loaderBar');
+
+function finishLoading() {
+  document.body.classList.remove('is-loading');
+  document.body.classList.add('loaded');
+}
+
+if (loader && !reduceMotion) {
+  const start = performance.now();
+  const duration = 1500;
+  const tick = (now) => {
+    const p = clamp((now - start) / duration, 0, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    if (loaderNum) loaderNum.textContent = String(Math.round(eased * 100)).padStart(2, '0');
+    if (loaderBar) loaderBar.style.width = (eased * 100) + '%';
+    if (p < 1) requestAnimationFrame(tick);
+    else finishLoading();
+  };
+  requestAnimationFrame(tick);
+} else {
+  finishLoading();
+}
+
+/* ====================== SPLIT TEXT ====================== */
+function splitWords(element) {
+  const words = [];
+  const walk = (node, target) => {
+    node.childNodes.forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        child.textContent.split(/(\s+)/).forEach((part) => {
+          if (/^\s+$/.test(part)) target.appendChild(document.createTextNode(part));
+          else if (part.length) {
+            const wrap = document.createElement('span');
+            wrap.className = 'w';
+            const inner = document.createElement('span');
+            inner.className = 'wi';
+            inner.textContent = part;
+            wrap.appendChild(inner);
+            target.appendChild(wrap);
+            words.push(inner);
+          }
+        });
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        const clone = child.cloneNode(false);
+        target.appendChild(clone);
+        walk(child, clone);
+      }
+    });
+  };
+  const fragment = document.createDocumentFragment();
+  walk(element, fragment);
+  element.textContent = '';
+  element.appendChild(fragment);
+  words.forEach((word, i) => word.style.setProperty('--d', (i * 0.055) + 's'));
+  return words;
+}
+
+if (!reduceMotion) {
+  document.querySelectorAll('[data-split]').forEach((h) => splitWords(h));
+}
+
+/* ====================== THEME ====================== */
 const themeBtn = document.getElementById('themeBtn');
 const storedTheme = localStorage.getItem('ac-theme');
 if (storedTheme) document.documentElement.setAttribute('data-theme', storedTheme);
+if (themeBtn) themeBtn.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('ac-theme', next);
+});
 
-if (themeBtn) {
-  themeBtn.addEventListener('click', () => {
-    const current = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('ac-theme', next);
-  });
-}
-
-/* ---------------- CLOCK (GMT) ---------------- */
+/* ====================== CLOCK ====================== */
 function updateClocks() {
   const now = new Date();
-  const time = String(now.getUTCHours()).padStart(2, '0') + ':' + String(now.getUTCMinutes()).padStart(2, '0');
+  const t = String(now.getUTCHours()).padStart(2, '0') + ':' + String(now.getUTCMinutes()).padStart(2, '0');
   ['clock', 'clock2', 'clock3', 'clock4'].forEach((id) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = time;
+    if (el) el.textContent = t;
   });
 }
 updateClocks();
 setInterval(updateClocks, 30000);
 
-/* ---------------- MOBILE NAV ---------------- */
+/* ====================== MOBILE NAV ====================== */
 const menuToggle = document.getElementById('menuToggle');
 const mobileNav = document.getElementById('mobileNav');
 if (menuToggle && mobileNav) {
@@ -45,13 +106,12 @@ if (menuToggle && mobileNav) {
   }));
 }
 
-/* ---------------- SEARCH (⌘K / /) ---------------- */
+/* ====================== SEARCH ====================== */
 const searchOverlay = document.getElementById('searchOverlay');
 const searchBtn = document.getElementById('searchBtn');
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
-const searchHint = searchResults?.querySelector('.search-hint');
-const searchLinks = Array.from(searchResults?.querySelectorAll('a') || []);
+const searchLinks = searchResults ? Array.from(searchResults.querySelectorAll('a')) : [];
 
 function openSearch() {
   if (!searchOverlay) return;
@@ -67,25 +127,21 @@ function closeSearch() {
 if (searchBtn) searchBtn.addEventListener('click', openSearch);
 if (searchOverlay) searchOverlay.addEventListener('click', (e) => { if (e.target === searchOverlay) closeSearch(); });
 
-function filterSearch(query) {
-  const q = query.trim().toLowerCase();
+function filterSearch(q) {
+  q = q.trim().toLowerCase();
   let shown = 0;
-  searchLinks.forEach((link) => {
-    const text = link.textContent.toLowerCase();
-    const match = !q || text.includes(q);
-    link.style.display = match ? '' : 'none';
+  searchLinks.forEach((a) => {
+    const match = !q || a.textContent.toLowerCase().includes(q);
+    a.style.display = match ? '' : 'none';
     if (match) shown++;
   });
-  if (searchHint) searchHint.style.display = q ? 'none' : '';
+  const hint = searchResults?.querySelector('.search-hint');
+  if (hint) hint.style.display = q ? 'none' : '';
   let empty = searchResults?.querySelector('.search-empty');
   if (!shown && q) {
-    if (!empty) {
-      empty = document.createElement('p');
-      empty.className = 'search-empty';
-      empty.textContent = 'Aucun résultat pour « ' + query + ' »';
-      searchResults.appendChild(empty);
-    }
-  } else if (empty) { empty.remove(); }
+    if (!empty) { empty = document.createElement('p'); empty.className = 'search-empty'; searchResults.appendChild(empty); }
+    empty.textContent = 'Aucun résultat pour « ' + q + ' »';
+  } else if (empty) empty.remove();
 }
 if (searchInput) searchInput.addEventListener('input', (e) => filterSearch(e.target.value));
 
@@ -96,60 +152,90 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') { closeSearch(); return; }
 });
 
-/* ---------------- REVEALS ---------------- */
+/* ====================== REVEALS ====================== */
 if ('IntersectionObserver' in window && !reduceMotion) {
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) { entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-  document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 0.06 + 's'; io.observe(el); });
+  document.querySelectorAll('.reveal, [data-split]').forEach((el, i) => {
+    el.style.transitionDelay = (i % 4) * 0.06 + 's';
+    io.observe(el);
+  });
 } else {
-  document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in-view'));
+  document.querySelectorAll('.reveal, [data-split]').forEach((el) => el.classList.add('in-view'));
 }
-setTimeout(() => document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in-view')), 5000);
+setTimeout(() => document.querySelectorAll('.reveal, [data-split]').forEach((el) => el.classList.add('in-view')), 3000);
 
-/* ---------------- HEADER + NAV ACTIVE ---------------- */
+/* ====================== SCROLL : progression + parallaxe + nav ====================== */
 const header = document.querySelector('.header');
+const progress = document.getElementById('scrollProgress');
 const navLinks = Array.from(document.querySelectorAll('.nav a'));
 const sections = Array.from(document.querySelectorAll('section[id]'));
+const parallaxEl = document.querySelector('[data-parallax]');
+let ticking = false;
 
 function onScroll() {
-  if (header) header.classList.toggle('scrolled', window.scrollY > 10);
+  const y = window.scrollY;
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  if (progress) progress.style.setProperty('--p', String(docH > 0 ? clamp(y / docH, 0, 1) : 0));
+  if (header) header.classList.toggle('scrolled', y > 10);
+
   let current = '';
-  sections.forEach((s) => { if (window.scrollY >= s.offsetTop - 160) current = s.id; });
+  sections.forEach((s) => { if (y >= s.offsetTop - 160) current = s.id; });
   navLinks.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+
+  if (!reduceMotion && parallaxEl) {
+    parallaxEl.style.setProperty('--py', clamp(y * 0.06, 0, 40) + 'px');
+  }
+  ticking = false;
 }
-window.addEventListener('scroll', onScroll, { passive: true });
+function requestScroll() { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }
+window.addEventListener('scroll', requestScroll, { passive: true });
+window.addEventListener('resize', requestScroll, { passive: true });
 onScroll();
 
-/* ---------------- FILTRES PROJETS ---------------- */
+/* ====================== CURSEUR ====================== */
+const cursor = document.getElementById('cursor');
+if (cursor && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
+  let mx = -100, my = -100, cx = -100, cy = -100;
+  window.addEventListener('pointermove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.opacity = '1';
+    cursor.classList.toggle('is-hover', !!e.target.closest('a, button, .result-card, .skill-card, .pf, .project-card'));
+  });
+  document.addEventListener('pointerleave', () => { cursor.style.opacity = '0'; });
+  const follow = () => {
+    cx += (mx - cx) * 0.2; cy += (my - cy) * 0.2;
+    cursor.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+    requestAnimationFrame(follow);
+  };
+  follow();
+}
+
+/* ====================== FILTRES ====================== */
 const filters = document.querySelectorAll('.pf');
 const projects = document.querySelectorAll('.project-card');
 filters.forEach((btn) => btn.addEventListener('click', () => {
   filters.forEach((b) => b.classList.toggle('is-active', b === btn));
   const f = btn.dataset.filter;
-  projects.forEach((p) => {
-    p.classList.toggle('is-hidden', !(f === 'all' || p.dataset.cat === f));
-  });
+  projects.forEach((p) => p.classList.toggle('is-hidden', !(f === 'all' || p.dataset.cat === f)));
 }));
 
-/* ---------------- FORMULAIRE ---------------- */
+/* ====================== FORMULAIRE ====================== */
 const CONTACT_EMAIL = 'aristidecedricbassole@gmail.com';
 const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const type = document.getElementById('cf-type')?.value || 'Projet';
-    const name = document.getElementById('cf-name')?.value.trim() || '';
-    const email = document.getElementById('cf-email')?.value.trim() || '';
-    const message = document.getElementById('cf-message')?.value.trim() || '';
-    const body = [`Nom : ${name}`, `E-mail : ${email}`, `Type : ${type}`, '', message].join('\n');
-    const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('[Portfolio] ' + type)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-  });
-}
+if (form) form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const type = document.getElementById('cf-type')?.value || 'Projet';
+  const name = document.getElementById('cf-name')?.value.trim() || '';
+  const email = document.getElementById('cf-email')?.value.trim() || '';
+  const message = document.getElementById('cf-message')?.value.trim() || '';
+  const body = ['Nom : ' + name, 'E-mail : ' + email, 'Type : ' + type, '', message].join('\n');
+  window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('[Portfolio] ' + type) + '&body=' + encodeURIComponent(body);
+});
 
-/* ---------------- ANNÉE ---------------- */
+/* ====================== ANNÉE ====================== */
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());

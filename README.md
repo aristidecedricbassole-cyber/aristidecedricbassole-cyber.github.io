@@ -1,39 +1,36 @@
 # Portfolio — Aristide Cédric Bassolé
 
-Site statique (HTML / CSS / JavaScript pur), design **adapté de ibrahimdayende.me** :
-fond crème, typographie Bricolage Grotesque, accents bleu/vert/violet,
-section résultats avec cartes de chiffres, cartes de compétences, services,
-projets filtrables, à propos, témoignages et contact.
+Site statique (HTML / CSS / JavaScript pur), design adapté de ibrahimdayende.me.
 
 **En ligne :** https://aristidecedricbassole-cyber.github.io/
 **Raccourci :** https://bit.ly/AristideCedricBassole
 **E-mail :** aristidecedricbassole@gmail.com
 
-## Ce qui a été adapté du modèle
+## Nouveautés
 
-- En-tête : logo, navigation, recherche **⌘K / /**, bascule **mode sombre**, FR/EN, CTA
-- Hero : badge de disponibilité, horloge GMT, titre massif avec surlignage bleu et soulignement vert,
-  portrait avec cartes flottantes et badge circulaire rotatif
-- Sections numérotées 01 → 07 : Résultats, Compétences, Services, Projets, À propos, Témoignages, Contact
-- Cartes de résultats avec grands chiffres et couleurs (bleu / vert / violet)
-- Cartes de compétences avec vignettes de projets et tags
-- Services avec « Ce que ça change » + méthode en 4 étapes
-- Grille de projets filtrable + CTA
-- Profil avec faits clés (base, formation, heure, collaboration, réponse) et valeurs
-- Témoignages et formulaire de contact (ouvre la messagerie)
-- Pied de page complet avec navigation et astuce ⌘K
+- **Vraie photo intégrée** : `assets/portrait.png` (portrait professionnel fond bleu), utilisée dans le hero et la section À propos.
+- **Motion design professionnel** :
+  - Loader d'entrée avec compteur 00→100 %
+  - Split-text : titres révélés mot par mot (hero + sections)
+  - Parallaxe sur le portrait au scroll
+  - Curseur personnalisé qui grandit au survol
+  - Barre de progression de lecture
+  - Révélations en cascade des sections
+  - Cartes avec soulignement animé au survol
+  - Badges flottants et badge circulaire rotatif
+  - Recherche ⌘K / /, mode sombre, horloge GMT
+- Tout est désactivé avec `prefers-reduced-motion`.
 
 ## Contenu
 
 Photographe, vidéaste **indépendant** et facilitateur de jeunes, basé à
 **Ouagadougou**. Aucune rubrique « Communication & marketing digital ».
+Chiffres honnêtes. Les 5 visuels de projet restent des images de démonstration.
 
-Chiffres honnêtes (04 expertises, 2023, 2024, 24h, 100+ pays via AIESEC).
+## À remplacer
 
-## À remplacer par vos éléments réels
-
-- Les 6 visuels de `assets/` restent des **images de démonstration**.
-- Les 3 témoignages sont des emplacements « À compléter ».
+- Les images de projet (`assets/video.jpg`, `reportage.jpg`, `gear.jpg`, `workshop.jpg`, `landscape.jpg`) par vos vraies créations.
+- Les 3 témoignages « À compléter ».
 
 ## Mise à jour
 
