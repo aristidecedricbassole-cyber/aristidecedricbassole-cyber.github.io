@@ -236,6 +236,46 @@ if (form) form.addEventListener('submit', (e) => {
   window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent('[Portfolio] ' + type) + '&body=' + encodeURIComponent(body);
 });
 
+/* ====================== LIGHTBOX ====================== */
+const lightbox = document.getElementById('lightbox');
+const lbImage = document.getElementById('lbImage');
+const lbCaption = document.getElementById('lbCaption');
+const lbCount = document.getElementById('lbCount');
+const triggers = document.querySelectorAll('.lightbox-trigger');
+const galleryImages = ['01','02','03','04','05','06','07'].map((n) => 'assets/sonabel-' + n + '.jpg');
+let lbIndex = 0;
+
+function showLightbox(index) {
+  if (!lightbox || !galleryImages.length) return;
+  lbIndex = (index + galleryImages.length) % galleryImages.length;
+  if (lbImage) { lbImage.src = galleryImages[lbIndex]; lbImage.alt = 'Photo ' + (lbIndex + 1) + ' du reportage'; }
+  const num = String(lbIndex + 1).padStart(2, '0');
+  if (lbCount) lbCount.textContent = num + ' / ' + String(galleryImages.length).padStart(2, '0');
+  if (lbCaption) lbCaption.textContent = 'SONABEL — Reportage industriel · ' + num;
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('lb-open');
+}
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('lb-open');
+}
+
+triggers.forEach((el) => el.addEventListener('click', () => showLightbox(Number(el.dataset.index))));
+document.getElementById('lbClose')?.addEventListener('click', closeLightbox);
+document.getElementById('lbPrev')?.addEventListener('click', () => showLightbox(lbIndex - 1));
+document.getElementById('lbNext')?.addEventListener('click', () => showLightbox(lbIndex + 1));
+if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+document.addEventListener('keydown', (e) => {
+  if (!lightbox?.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showLightbox(lbIndex - 1);
+  if (e.key === 'ArrowRight') showLightbox(lbIndex + 1);
+});
+
 /* ====================== ANNÉE ====================== */
 const year = document.getElementById('year');
 if (year) year.textContent = String(new Date().getFullYear());

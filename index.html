@@ -331,13 +331,13 @@
           <!-- PROJET RÉEL -->
           <article class="project-card project-featured reveal" data-cat="photo">
             <div class="pc-media">
-              <img src="assets/sonabel-01.jpg" alt="Reportage SONABEL — techniciens en intervention sur un transformateur" loading="lazy">
+              <img class="lightbox-trigger" src="assets/sonabel-01.jpg" data-full="assets/sonabel-01.jpg" data-index="0" alt="Reportage SONABEL — techniciens en intervention sur un transformateur">
               <span class="pc-status real">✓ Projet réel</span>
               <div class="pc-gallery">
-                <img src="assets/sonabel-02.jpg" alt="Technicien en hauteur" loading="lazy">
-                <img src="assets/sonabel-03.jpg" alt="Technicien au travail" loading="lazy">
-                <img src="assets/sonabel-04.jpg" alt="Intervention sur site" loading="lazy">
-                <span>+4</span>
+                <img class="lightbox-trigger" src="assets/sonabel-02.jpg" data-full="assets/sonabel-02.jpg" data-index="1" alt="Technicien en hauteur">
+                <img class="lightbox-trigger" src="assets/sonabel-03.jpg" data-full="assets/sonabel-03.jpg" data-index="2" alt="Technicien au travail">
+                <img class="lightbox-trigger" src="assets/sonabel-04.jpg" data-full="assets/sonabel-04.jpg" data-index="3" alt="Intervention sur site">
+                <span>07</span>
               </div>
             </div>
             <div class="pc-body">
@@ -506,6 +506,18 @@
     </div>
     <div class="container footer-bottom"><p>© <span id="year">2026</span> Aristide Cédric Bassolé. Tous droits réservés.</p><a href="#accueil">Haut de page ↑</a></div>
   </footer>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionnage des photos" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Fermer">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Photo précédente">←</button>
+    <figure class="lb-figure">
+      <img id="lbImage" src="" alt="Photo du reportage">
+      <figcaption id="lbCaption">SONABEL — Reportage industriel · 01 / 07</figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Photo suivante">→</button>
+    <div class="lb-count" id="lbCount">01 / 07</div>
+  </div>
 
   <script src="script.js"></script>
 </body>
