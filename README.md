@@ -6,36 +6,19 @@ Site statique (HTML / CSS / JavaScript pur), design adapté de ibrahimdayende.me
 **Raccourci :** https://bit.ly/AristideCedricBassole
 **E-mail :** aristidecedricbassole@gmail.com
 
-## Nouveautés
+## Projets réels
 
-- **Vraie photo intégrée** : `assets/portrait.png` (portrait professionnel fond bleu), utilisée dans le hero et la section À propos.
-- **Motion design professionnel** :
-  - Loader d'entrée avec compteur 00→100 %
-  - Split-text : titres révélés mot par mot (hero + sections)
-  - Parallaxe sur le portrait au scroll
-  - Curseur personnalisé qui grandit au survol
-  - Barre de progression de lecture
-  - Révélations en cascade des sections
-  - Cartes avec soulignement animé au survol
-  - Badges flottants et badge circulaire rotatif
-  - Recherche ⌘K / /, mode sombre, horloge GMT
-- Tout est désactivé avec `prefers-reduced-motion`.
+- **SONABEL — Reportage industriel** : 7 photos récupérées depuis le Google Drive
+  (`assets/sonabel-01.jpg` → `sonabel-07.jpg`), optimisées à 1400px (~1,7 Mo au total).
+  Mise en vedette dans la section Projets avec badge « ✓ Projet réel », mini-galerie
+  et filtres mis à jour (Photo 03, Tous 05).
 
-## Contenu
+## Photos
 
-Photographe, vidéaste **indépendant** et facilitateur de jeunes, basé à
-**Ouagadougou**. Aucune rubrique « Communication & marketing digital ».
-Chiffres honnêtes. Les 5 visuels de projet restent des images de démonstration.
+- `assets/portrait.png` : vrai portrait (fond bleu), hero + À propos.
+- Autres visuels : démonstration.
 
-## À remplacer
+## Motion design
 
-- Les images de projet (`assets/video.jpg`, `reportage.jpg`, `gear.jpg`, `workshop.jpg`, `landscape.jpg`) par vos vraies créations.
-- Les 3 témoignages « À compléter ».
-
-## Mise à jour
-
-Via GitHub (Add file → Upload files) ou en local :
-
-```powershell
-git add . && git commit -m "Mise à jour" && git push
-```
+Loader 00→100 %, split-text, parallaxe, curseur, progression, révélations,
+recherche ⌘K, thème sombre, horloge GMT. Désactivé avec `prefers-reduced-motion`.
