@@ -272,73 +272,92 @@ html[data-theme="dark"] .hl-blue { color: #7ea6ff; }
 .mstep small { font: 10px 'Space Mono', monospace; color: var(--green); }
 
 /* ---------------- PROJETS ---------------- */
-/* Carrousel immersif — photos entières, format animé */
-.story-carousel {
+/* Galerie photo — photos entières, fond flouté, défilement fluide */
+.photo-gallery {
   grid-column: 1 / -1; background: var(--fg); color: var(--bg);
-  border-radius: var(--radius); overflow: hidden; padding: 22px;
+  border-radius: var(--radius); padding: 22px;
   box-shadow: 0 20px 60px rgba(18,21,33,.18);
 }
-.sc-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
-.pc-status.real { background: var(--primary); color: #fff; padding: 6px 12px; border-radius: 999px; font: 10px 'Space Mono', monospace; letter-spacing: .08em; }
-.sc-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; font-weight: 700; }
-.sc-counter, .sc-count-label { margin-left: auto; font: 11px 'Space Mono', monospace; color: rgba(255,255,255,.6); letter-spacing: .06em; }
-.sc-counter b { color: #7ea6ff; }
+.photo-gallery.is-hidden { display: none; }
+.pg-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+.pg-kicker { font: 10px 'Space Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: #7ea6ff; }
+.pg-head h3 { margin: 6px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.5rem); }
+.pg-counter { font: 12px 'Space Mono', monospace; color: rgba(255,255,255,.55); letter-spacing: .08em; }
+.pg-counter b { color: #fff; }
 
-/* Projet à photo unique (portrait) */
-.sc-single { height: clamp(420px, 62vw, 760px); }
-.sc-single .sc-slide { object-fit: contain; object-position: center top; }
-.sc-zoom-in {
-  position: absolute; right: 16px; bottom: 16px; z-index: 3;
-  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3);
-  color: #fff; padding: 10px 16px; border-radius: 999px; cursor: pointer;
-  font-size: .78rem; font-weight: 600; backdrop-filter: blur(8px);
-  transition: background .3s, transform .3s var(--ease);
+.pg-stage {
+  position: relative; isolation: isolate; overflow: hidden;
+  height: clamp(340px, 64vh, 680px);
+  border-radius: 14px; background: #0b0d14;
+  cursor: zoom-in; touch-action: pan-y;
+  transition: height .75s var(--ease);
+  animation: pgIn .8s var(--ease) both;
 }
-.sc-zoom-in:hover { background: var(--primary); transform: scale(1.05); }
-.sc-body { padding: 24px 4px 6px; }
-.sc-body h3 { margin: 12px 0 8px; font-size: 1.5rem; font-family: 'Bricolage Grotesque', sans-serif; }
-.sc-body p { color: rgba(255,255,255,.72); margin: 0 0 16px; max-width: 720px; }
-.sc-body .pc-stats { display: flex; gap: 28px; flex-wrap: wrap; padding: 14px 0; border-block: 1px solid rgba(255,255,255,.14); margin-bottom: 14px; }
-.sc-body .pc-stats strong { color: #7ea6ff; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; }
-.sc-body .pc-stats span { font-size: .8rem; color: rgba(255,255,255,.6); }
-.sc-body .pc-link { color: #7ea6ff; font-weight: 700; font-size: .85rem; }
-
-.sc-stage { position: relative; height: clamp(320px, 50vw, 620px); background: #000; border-radius: 12px; overflow: hidden; }
-.sc-slide {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: contain; /* PHOTO ENTIÈRE, aucun recadrage */
-  opacity: 0; transform: scale(1.06); pointer-events: none;
-  transition: opacity .9s var(--ease), transform 1.6s var(--ease);
+@keyframes pgIn { from { opacity: 0; transform: translateY(14px); } }
+.pg-backdrop {
+  position: absolute; inset: -70px; z-index: 0;
+  background-size: cover; background-position: center;
+  filter: blur(38px) saturate(1.25) brightness(.55);
+  transform: scale(1.12);
 }
-.sc-slide.is-active { opacity: 1; transform: scale(1); }
-.sc-nav {
+.pg-image {
+  position: relative; z-index: 1; display: block;
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center;
+  opacity: 1; transform: scale(1);
+  transition: opacity .4s ease, transform .9s var(--ease);
+}
+.pg-image.is-changing { opacity: 0; transform: scale(1.025); }
+.pg-nav {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 48px; height: 48px; border-radius: 50%; z-index: 3;
   background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3);
   color: #fff; font-size: 1.2rem; cursor: pointer;
   backdrop-filter: blur(8px); transition: background .3s, transform .3s var(--ease);
 }
-.sc-nav:hover { background: var(--primary); transform: translateY(-50%) scale(1.1); }
-.sc-prev { left: 16px; } .sc-next { right: 16px; }
-
-.sc-foot { display: flex; align-items: center; gap: 14px; margin-top: 14px; }
-.sc-thumbs { display: flex; gap: 8px; flex: 1; overflow-x: auto; padding-bottom: 4px; }
-.sc-thumbs img {
-  width: 72px; height: 52px; object-fit: cover; border-radius: 6px; cursor: pointer;
-  border: 2px solid transparent; opacity: .5; transition: opacity .3s, border-color .3s, transform .3s var(--ease);
-  flex-shrink: 0; filter: grayscale(1);
+.pg-nav:hover { background: var(--primary); transform: translateY(-50%) scale(1.1); }
+.pg-prev { left: 14px; } .pg-next { right: 14px; }
+.pg-zoom {
+  position: absolute; right: 14px; bottom: 14px; z-index: 3;
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3);
+  color: #fff; padding: 9px 15px; border-radius: 999px; cursor: pointer;
+  font: 600 .76rem/1 'Bricolage Grotesque', sans-serif; backdrop-filter: blur(8px);
+  transition: background .3s, transform .3s var(--ease);
 }
-.sc-thumbs img:hover { opacity: .85; transform: translateY(-3px); }
-.sc-thumbs img.is-active { opacity: 1; border-color: #7ea6ff; filter: none; }
-.sc-zoom { background: none; border: 1px solid rgba(255,255,255,.3); color: #fff; padding: 8px 14px; border-radius: 999px; font-size: .78rem; font-weight: 600; cursor: pointer; white-space: nowrap; transition: background .3s; }
-.sc-zoom:hover { background: var(--primary); }
-.sc-progress { height: 2px; background: rgba(255,255,255,.15); margin-top: 14px; border-radius: 2px; overflow: hidden; }
-.sc-progress span { display: block; height: 100%; width: 0; background: #7ea6ff; transition: width .1s linear; }
+.pg-zoom:hover { background: var(--primary); transform: scale(1.05); }
+.pg-bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
+.pg-info { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0; }
+.pg-cat { font: 9px 'Space Mono', monospace; letter-spacing: .1em; text-transform: uppercase; color: #7ea6ff; border: 1px solid rgba(126,166,255,.4); padding: 4px 9px; border-radius: 999px; }
+.pg-caption { font-size: .85rem; color: rgba(255,255,255,.72); }
+.pg-dots { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pg-dots button {
+  width: 7px; height: 7px; padding: 0; border: 0; border-radius: 99px;
+  background: rgba(255,255,255,.25); cursor: pointer;
+  transition: width .35s var(--ease), background .3s;
+}
+.pg-dots button:hover { background: rgba(255,255,255,.55); }
+.pg-dots button.is-active { width: 24px; background: #7ea6ff; }
+.pg-progress { height: 2px; background: rgba(255,255,255,.15); margin-top: 12px; border-radius: 2px; overflow: hidden; }
+.pg-progress span { display: block; height: 100%; width: 0; background: #7ea6ff; }
+
+.pc-status.real { background: var(--primary); color: #fff; }
+.pc-media.pc-media-portrait { height: 320px; background: #0e1016; }
+.pc-media.pc-media-portrait::before {
+  content: ''; position: absolute; inset: -24px; z-index: 0;
+  background: url('assets/filo-bookcamp.jpg') center/cover no-repeat;
+  filter: blur(26px) brightness(.42);
+}
+.pc-media.pc-media-portrait img { position: relative; z-index: 1; object-fit: contain; filter: none; }
+.project-card:hover .pc-media.pc-media-portrait img { filter: none; }
+.project-card .pc-stats { display: flex; flex-wrap: wrap; gap: 20px; }
 @media (max-width: 640px) {
-  .story-carousel { padding: 14px; }
-  .sc-stage { height: 300px; }
-  .sc-nav { width: 40px; height: 40px; }
-  .sc-thumbs img { width: 56px; height: 42px; }
+  .photo-gallery { padding: 14px; }
+  .pg-stage { height: clamp(300px, 60vh, 500px); }
+  .pg-nav { width: 40px; height: 40px; }
+  .pg-zoom { padding: 8px 12px; font-size: .72rem; }
+  .pg-dots button { width: 6px; height: 6px; }
+  .pg-dots button.is-active { width: 18px; }
+  .pg-caption { font-size: .78rem; }
 }
 
 /* Lightbox */

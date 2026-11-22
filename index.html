@@ -321,32 +321,54 @@
         </div>
 
         <div class="project-filters" role="group" aria-label="Filtrer les projets">
-          <button class="pf is-active" data-filter="all">Tous <sup>05</sup></button>
+          <button class="pf is-active" data-filter="all">Tous <sup>06</sup></button>
           <button class="pf" data-filter="video">Vidéo <sup>01</sup></button>
-          <button class="pf" data-filter="photo">Photo <sup>03</sup></button>
+          <button class="pf" data-filter="photo">Photo <sup>04</sup></button>
           <button class="pf" data-filter="facilitation">Facilitation <sup>01</sup></button>
         </div>
 
         <div class="project-grid" id="projectGrid">
+          <!-- ============ GALERIE PHOTO — SÉLECTION RÉELLE ============ -->
+          <article class="photo-gallery reveal" id="photoGallery" data-cat="photo" aria-roledescription="carrousel" aria-label="Sélection photographique">
+            <div class="pg-head">
+              <div>
+                <span class="pg-kicker">Sélection photographique</span>
+                <h3>Reportages, portraits &amp; grand format</h3>
+              </div>
+              <span class="pg-counter" aria-live="polite"><b id="pgCurrent">01</b> / <span id="pgTotal">12</span></span>
+            </div>
+
+            <div class="pg-stage" id="pgStage" tabindex="0" aria-label="Galerie photo — utilisez les flèches du clavier ou balayez">
+              <div class="pg-backdrop" id="pgBackdrop" aria-hidden="true"></div>
+              <img class="pg-image" id="pgImage" src="assets/galerie/ceremonie-officielle.jpg"
+                   alt="Cérémonie officielle — reportage institutionnel" fetchpriority="high" decoding="async">
+              <button class="pg-nav pg-prev" id="pgPrev" aria-label="Photo précédente">←</button>
+              <button class="pg-nav pg-next" id="pgNext" aria-label="Photo suivante">→</button>
+              <button class="pg-zoom" id="pgZoom" type="button">⤢ Agrandir</button>
+            </div>
+
+            <div class="pg-bar">
+              <div class="pg-info">
+                <span class="pg-cat" id="pgCat">Institutionnel</span>
+                <span class="pg-caption" id="pgCaption">Cérémonie officielle · Ouagadougou</span>
+              </div>
+              <div class="pg-dots" id="pgDots" role="group" aria-label="Choisir une photo"></div>
+            </div>
+            <div class="pg-progress" aria-hidden="true"><span id="pgBar"></span></div>
+          </article>
+
           <!-- PROJET RÉEL — BOOKCAMP FILO -->
-          <article class="story-carousel reveal" id="storyCarousel" data-cat="photo">
-            <div class="sc-head">
+          <article class="project-card" data-cat="photo">
+            <div class="pc-media pc-media-portrait">
+              <img src="assets/filo-bookcamp.jpg" alt="Bookcamp FILO — participante présentant l'ouvrage « Relations Publiques en Afrique »" loading="lazy">
               <span class="pc-status real">✓ Projet réel</span>
-              <span class="sc-title">Bookcamp FILO — Édition 2026</span>
-              <span class="sc-count-label">Foire Internationale du Livre de Ouagadougou</span>
             </div>
-
-            <div class="sc-stage sc-single" id="scStage">
-              <img class="sc-slide is-active" src="assets/filo-bookcamp.jpg" alt="Bookcamp FILO — participante présentant l'ouvrage « Relations Publiques en Afrique »" loading="lazy">
-              <button class="sc-zoom-in" id="scZoom" aria-label="Agrandir la photo">⤢ Agrandir</button>
-            </div>
-
-            <div class="sc-body">
+            <div class="pc-body">
               <div class="pc-tags"><span>Photographie</span><span>Événementiel</span><span>Livre &amp; culture</span></div>
               <h3>Bookcamp des amis de la FILO</h3>
-              <p>Un reportage photo réalisé pour préparer le bookcamp des amis de la Foire Internationale du Livre de Ouagadougou : des portraits et des moments de partage autour du livre, de la lecture et de la communication en Afrique.</p>
-              <div class="pc-stats"><span><strong>1</strong> reportage</span><span><strong>FILO</strong> Ouagadougou</span><span><strong>2026</strong> édition</span></div>
-              <a href="#contact" class="pc-link">Voir le reportage complet →</a>
+              <p>Reportage photo pour préparer le bookcamp des amis de la Foire Internationale du Livre de Ouagadougou : portraits et moments de partage autour du livre, de la lecture et de la communication en Afrique.</p>
+              <div class="pc-stats"><span><strong>FILO</strong> Ouagadougou</span><span><strong>2026</strong> édition</span></div>
+              <a href="#contact" class="pc-link">Parlons d'un reportage similaire →</a>
             </div>
           </article>
 
@@ -509,13 +531,15 @@
   </footer>
 
   <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionnage de la photo" aria-hidden="true">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionnage des photos" aria-hidden="true">
     <button class="lb-close" id="lbClose" aria-label="Fermer">×</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Photo précédente">←</button>
     <figure class="lb-figure">
-      <img id="lbImage" src="" alt="Photo du reportage Bookcamp FILO">
-      <figcaption id="lbCaption">Bookcamp FILO — Reportage photographique</figcaption>
+      <img id="lbImage" src="" alt="Photo de la galerie">
+      <figcaption id="lbCaption">Sélection photographique</figcaption>
     </figure>
-    <div class="lb-count" id="lbCount">01 / 01</div>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Photo suivante">→</button>
+    <div class="lb-count" id="lbCount">01 / 12</div>
   </div>
 
   <script src="script.js"></script>
