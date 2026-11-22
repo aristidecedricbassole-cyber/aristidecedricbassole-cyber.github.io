@@ -4,17 +4,22 @@
 **Raccourci :** https://bit.ly/AristideCedricBassole
 **E-mail :** aristidecedricbassole@gmail.com
 
-## Projet réel — Carrousel SONABEL
+## Projet réel — Bookcamp FILO
 
-Les 7 photos du reportage SONABEL sont affichées dans un **carrousel immersif** :
-- **Photos entières** : `object-fit: contain` — aucun recadrage, le format d'origine est respecté
-- **Motion design** : transition fondu + zoom à chaque changement, auto-play toutes les 4,5 s (pause au survol, pause hors écran)
-- Barre de progression animée, compteur « 01 / 07 », flèches ← →, miniatures cliquables
-- Bouton « Agrandir » → lightbox plein écran avec navigation clavier
+Reportage photo pour préparer le **bookcamp des amis de la Foire Internationale
+du Livre de Ouagadougou (FILO)**. Photo optimisée à 1400px dans
+`assets/filo-bookcamp.jpg`, affichée entièrement (format portrait respecté) avec
+bouton d'agrandissement (lightbox).
 
-## Autres
+Le projet SONABEL a été retiré.
+
+## Photos
 
 - `assets/portrait.png` : vrai portrait (fond bleu) — hero + À propos
+- `assets/filo-bookcamp.jpg` : reportage réel FILO
 - Autres visuels de projet : démonstration
-- Motion design global : loader, split-text, parallaxe, curseur, recherche ⌘K, thème sombre, horloge GMT
-- `prefers-reduced-motion` respecté
+
+## Motion design global
+
+Loader, split-text, parallaxe, curseur, progression, révélations, recherche ⌘K,
+thème sombre, horloge GMT, lightbox. Désactivé avec `prefers-reduced-motion`.

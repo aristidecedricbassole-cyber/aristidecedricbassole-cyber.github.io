@@ -281,8 +281,27 @@ html[data-theme="dark"] .hl-blue { color: #7ea6ff; }
 .sc-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
 .pc-status.real { background: var(--primary); color: #fff; padding: 6px 12px; border-radius: 999px; font: 10px 'Space Mono', monospace; letter-spacing: .08em; }
 .sc-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; font-weight: 700; }
-.sc-counter { margin-left: auto; font: 12px 'Space Mono', monospace; color: rgba(255,255,255,.6); }
+.sc-counter, .sc-count-label { margin-left: auto; font: 11px 'Space Mono', monospace; color: rgba(255,255,255,.6); letter-spacing: .06em; }
 .sc-counter b { color: #7ea6ff; }
+
+/* Projet à photo unique (portrait) */
+.sc-single { height: clamp(420px, 62vw, 760px); }
+.sc-single .sc-slide { object-fit: contain; object-position: center top; }
+.sc-zoom-in {
+  position: absolute; right: 16px; bottom: 16px; z-index: 3;
+  background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3);
+  color: #fff; padding: 10px 16px; border-radius: 999px; cursor: pointer;
+  font-size: .78rem; font-weight: 600; backdrop-filter: blur(8px);
+  transition: background .3s, transform .3s var(--ease);
+}
+.sc-zoom-in:hover { background: var(--primary); transform: scale(1.05); }
+.sc-body { padding: 24px 4px 6px; }
+.sc-body h3 { margin: 12px 0 8px; font-size: 1.5rem; font-family: 'Bricolage Grotesque', sans-serif; }
+.sc-body p { color: rgba(255,255,255,.72); margin: 0 0 16px; max-width: 720px; }
+.sc-body .pc-stats { display: flex; gap: 28px; flex-wrap: wrap; padding: 14px 0; border-block: 1px solid rgba(255,255,255,.14); margin-bottom: 14px; }
+.sc-body .pc-stats strong { color: #7ea6ff; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.15rem; }
+.sc-body .pc-stats span { font-size: .8rem; color: rgba(255,255,255,.6); }
+.sc-body .pc-link { color: #7ea6ff; font-weight: 700; font-size: .85rem; }
 
 .sc-stage { position: relative; height: clamp(320px, 50vw, 620px); background: #000; border-radius: 12px; overflow: hidden; }
 .sc-slide {

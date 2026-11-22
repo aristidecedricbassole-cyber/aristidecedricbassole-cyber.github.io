@@ -328,31 +328,26 @@
         </div>
 
         <div class="project-grid" id="projectGrid">
-          <!-- PROJET RÉEL — CARROUSEL IMMERSIF -->
+          <!-- PROJET RÉEL — BOOKCAMP FILO -->
           <article class="story-carousel reveal" id="storyCarousel" data-cat="photo">
             <div class="sc-head">
               <span class="pc-status real">✓ Projet réel</span>
-              <span class="sc-title">SONABEL — Reportage industriel</span>
-              <span class="sc-counter"><b id="scCurrent">01</b> / 07</span>
+              <span class="sc-title">Bookcamp FILO — Édition 2026</span>
+              <span class="sc-count-label">Foire Internationale du Livre de Ouagadougou</span>
             </div>
 
-            <div class="sc-stage" id="scStage">
-              <img class="sc-slide is-active" src="assets/sonabel-01.jpg" data-index="0" alt="Reportage SONABEL — intervention sur transformateur">
-              <img class="sc-slide" src="assets/sonabel-02.jpg" data-index="1" alt="Technicien travaillant en hauteur">
-              <img class="sc-slide" src="assets/sonabel-03.jpg" data-index="2" alt="Technicien au travail">
-              <img class="sc-slide" src="assets/sonabel-04.jpg" data-index="3" alt="Intervention sur site">
-              <img class="sc-slide" src="assets/sonabel-05.jpg" data-index="4" alt="Équipement de mesure">
-              <img class="sc-slide" src="assets/sonabel-06.jpg" data-index="5" alt="Vue d'ensemble des transformateurs">
-              <img class="sc-slide" src="assets/sonabel-07.jpg" data-index="6" alt="Installation électrique SONABEL">
-              <button class="sc-nav sc-prev" id="scPrev" aria-label="Photo précédente">←</button>
-              <button class="sc-nav sc-next" id="scNext" aria-label="Photo suivante">→</button>
+            <div class="sc-stage sc-single" id="scStage">
+              <img class="sc-slide is-active" src="assets/filo-bookcamp.jpg" alt="Bookcamp FILO — participante présentant l'ouvrage « Relations Publiques en Afrique »" loading="lazy">
+              <button class="sc-zoom-in" id="scZoom" aria-label="Agrandir la photo">⤢ Agrandir</button>
             </div>
 
-            <div class="sc-foot">
-              <div class="sc-thumbs" id="scThumbs"></div>
-              <button class="sc-zoom" id="scZoom">Agrandir <span>⤢</span></button>
+            <div class="sc-body">
+              <div class="pc-tags"><span>Photographie</span><span>Événementiel</span><span>Livre &amp; culture</span></div>
+              <h3>Bookcamp des amis de la FILO</h3>
+              <p>Un reportage photo réalisé pour préparer le bookcamp des amis de la Foire Internationale du Livre de Ouagadougou : des portraits et des moments de partage autour du livre, de la lecture et de la communication en Afrique.</p>
+              <div class="pc-stats"><span><strong>1</strong> reportage</span><span><strong>FILO</strong> Ouagadougou</span><span><strong>2026</strong> édition</span></div>
+              <a href="#contact" class="pc-link">Voir le reportage complet →</a>
             </div>
-            <div class="sc-progress"><span id="scBar"></span></div>
           </article>
 
           <article class="project-card" data-cat="video">
@@ -514,15 +509,13 @@
   </footer>
 
   <!-- ============ LIGHTBOX ============ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionnage des photos" aria-hidden="true">
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visionnage de la photo" aria-hidden="true">
     <button class="lb-close" id="lbClose" aria-label="Fermer">×</button>
-    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Photo précédente">←</button>
     <figure class="lb-figure">
-      <img id="lbImage" src="" alt="Photo du reportage">
-      <figcaption id="lbCaption">SONABEL — Reportage industriel · 01 / 07</figcaption>
+      <img id="lbImage" src="" alt="Photo du reportage Bookcamp FILO">
+      <figcaption id="lbCaption">Bookcamp FILO — Reportage photographique</figcaption>
     </figure>
-    <button class="lb-nav lb-next" id="lbNext" aria-label="Photo suivante">→</button>
-    <div class="lb-count" id="lbCount">01 / 07</div>
+    <div class="lb-count" id="lbCount">01 / 01</div>
   </div>
 
   <script src="script.js"></script>
