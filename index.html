@@ -329,45 +329,66 @@
 
         <div class="project-grid" id="projectGrid">
           <!-- ============ GALERIE PHOTO — SÉLECTION RÉELLE ============ -->
-          <article class="photo-gallery reveal" id="photoGallery" data-cat="photo" aria-roledescription="carrousel" aria-label="Sélection photographique">
+          <article class="photo-gallery reveal" data-gallery="selection" data-cat="photo" aria-roledescription="carrousel" aria-label="Sélection photographique">
             <div class="pg-head">
               <div>
                 <span class="pg-kicker">Sélection photographique</span>
                 <h3>Reportages, portraits &amp; grand format</h3>
               </div>
-              <span class="pg-counter" aria-live="polite"><b id="pgCurrent">01</b> / <span id="pgTotal">12</span></span>
+              <span class="pg-counter" aria-live="polite"><b data-count>01</b> / <span data-total>12</span></span>
             </div>
 
-            <div class="pg-stage" id="pgStage" tabindex="0" aria-label="Galerie photo — utilisez les flèches du clavier ou balayez">
-              <div class="pg-backdrop" id="pgBackdrop" aria-hidden="true"></div>
-              <img class="pg-image" id="pgImage" src="assets/galerie/ceremonie-officielle.jpg"
+            <div class="pg-stage" data-stage tabindex="0" aria-label="Galerie photo — utilisez les flèches du clavier ou balayez">
+              <div class="pg-backdrop" data-backdrop aria-hidden="true"></div>
+              <img class="pg-image" data-image src="assets/galerie/ceremonie-officielle.jpg"
                    alt="Cérémonie officielle — reportage institutionnel" fetchpriority="high" decoding="async">
-              <button class="pg-nav pg-prev" id="pgPrev" aria-label="Photo précédente">←</button>
-              <button class="pg-nav pg-next" id="pgNext" aria-label="Photo suivante">→</button>
-              <button class="pg-zoom" id="pgZoom" type="button">⤢ Agrandir</button>
+              <button class="pg-nav pg-prev" data-prev type="button" aria-label="Photo précédente">←</button>
+              <button class="pg-nav pg-next" data-next type="button" aria-label="Photo suivante">→</button>
+              <button class="pg-zoom" data-zoom type="button">⤢ Agrandir</button>
             </div>
 
             <div class="pg-bar">
               <div class="pg-info">
-                <span class="pg-cat" id="pgCat">Institutionnel</span>
-                <span class="pg-caption" id="pgCaption">Cérémonie officielle · Ouagadougou</span>
+                <span class="pg-cat" data-cat>Institutionnel</span>
+                <span class="pg-caption" data-caption>Cérémonie officielle · Ouagadougou</span>
               </div>
-              <div class="pg-dots" id="pgDots" role="group" aria-label="Choisir une photo"></div>
+              <div class="pg-dots" data-dots role="group" aria-label="Choisir une photo"></div>
             </div>
-            <div class="pg-progress" aria-hidden="true"><span id="pgBar"></span></div>
+            <div class="pg-progress" aria-hidden="true"><span data-bar></span></div>
           </article>
 
-          <!-- PROJET RÉEL — BOOKCAMP FILO -->
-          <article class="project-card" data-cat="photo">
-            <div class="pc-media pc-media-portrait">
-              <img src="assets/filo-bookcamp.jpg" alt="Bookcamp FILO — participante présentant l'ouvrage « Relations Publiques en Afrique »" loading="lazy">
-              <span class="pc-status real">✓ Projet réel</span>
+          <!-- ============ PROJET RÉEL — BOOKCAMP FILO ============ -->
+          <article class="photo-gallery filo-project reveal" data-gallery="filo" data-cat="photo" aria-roledescription="carrousel" aria-label="Bookcamp FILO — reportage photographique">
+            <div class="pg-head">
+              <div>
+                <span class="pg-kicker">Projet réel · Reportage</span>
+                <h3>Bookcamp des amis de la FILO</h3>
+              </div>
+              <span class="pg-counter" aria-live="polite"><b data-count>01</b> / <span data-total>06</span></span>
             </div>
-            <div class="pc-body">
+
+            <div class="pg-stage" data-stage tabindex="0" aria-label="Reportage Bookcamp FILO — utilisez les flèches ou balayez">
+              <div class="pg-backdrop" data-backdrop aria-hidden="true"></div>
+              <img class="pg-image" data-image src="assets/filo/01-relations-publiques.jpg"
+                   alt="Bookcamp FILO — participante présentant l'ouvrage « Relations Publiques en Afrique »" fetchpriority="high" decoding="async">
+              <button class="pg-nav pg-prev" data-prev type="button" aria-label="Photo précédente">←</button>
+              <button class="pg-nav pg-next" data-next type="button" aria-label="Photo suivante">→</button>
+              <button class="pg-zoom" data-zoom type="button">⤢ Agrandir</button>
+            </div>
+
+            <div class="pg-bar">
+              <div class="pg-info">
+                <span class="pg-cat" data-cat>Bookcamp FILO</span>
+                <span class="pg-caption" data-caption>Relations Publiques en Afrique</span>
+              </div>
+              <div class="pg-dots" data-dots role="group" aria-label="Choisir une photo"></div>
+            </div>
+            <div class="pg-progress" aria-hidden="true"><span data-bar></span></div>
+
+            <div class="filo-body">
               <div class="pc-tags"><span>Photographie</span><span>Événementiel</span><span>Livre &amp; culture</span></div>
-              <h3>Bookcamp des amis de la FILO</h3>
-              <p>Reportage photo pour préparer le bookcamp des amis de la Foire Internationale du Livre de Ouagadougou : portraits et moments de partage autour du livre, de la lecture et de la communication en Afrique.</p>
-              <div class="pc-stats"><span><strong>FILO</strong> Ouagadougou</span><span><strong>2026</strong> édition</span></div>
+              <p>Reportage photo réalisé pour préparer le bookcamp des amis de la Foire Internationale du Livre de Ouagadougou : des portraits et des moments de partage autour du livre, de la lecture et de la communication en Afrique.</p>
+              <div class="pc-stats"><span><strong>06</strong> photos</span><span><strong>FILO</strong> Ouagadougou</span><span><strong>2026</strong> édition</span></div>
               <a href="#contact" class="pc-link">Parlons d'un reportage similaire →</a>
             </div>
           </article>
